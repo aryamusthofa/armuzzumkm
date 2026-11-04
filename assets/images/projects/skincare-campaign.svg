@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Illustrative skincare campaign concept</title>
+  <desc id="desc">A minimal skincare bottle on a pink studio background, marked as a concept sample.</desc>
+  <defs>
+    <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#f3d9d3"/><stop offset="1" stop-color="#eab8aa"/></linearGradient>
+    <linearGradient id="bottle" x2="1"><stop stop-color="#fcf5e9"/><stop offset=".5" stop-color="#fffdf7"/><stop offset="1" stop-color="#e8dac7"/></linearGradient>
+  </defs>
+  <rect width="900" height="1100" fill="url(#bg)"/>
+  <circle cx="695" cy="250" r="205" fill="#fff" opacity=".22"/>
+  <ellipse cx="456" cy="862" rx="231" ry="54" fill="#784c49" opacity=".13"/>
+  <path d="M251 802q202-122 401 0v124H251Z" fill="#e8c1ad"/>
+  <rect x="373" y="279" width="166" height="62" rx="19" fill="#826858"/>
+  <rect x="349" y="331" width="214" height="500" rx="50" fill="url(#bottle)" stroke="#d2c2ae" stroke-width="4"/>
+  <path d="M372 372h168v410H372Z" fill="#f6eee3"/>
+  <text x="456" y="539" text-anchor="middle" fill="#a16f62" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="5">DAILY</text>
+  <text x="456" y="583" text-anchor="middle" fill="#5a514a" font-family="Georgia,serif" font-size="34">Glow</text>
+  <text x="456" y="620" text-anchor="middle" fill="#7c7068" font-family="Arial,sans-serif" font-size="14" letter-spacing="3">SERUM · 30 ML</text>
+  <rect x="45" y="45" width="276" height="48" rx="24" fill="#fff" opacity=".82"/>
+  <text x="183" y="76" text-anchor="middle" fill="#78564e" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="2">CONCEPT SAMPLE</text>
+  <text x="70" y="1010" fill="#704c45" font-family="Georgia,serif" font-size="54">Soft, simple, effective.</text>
+</svg>

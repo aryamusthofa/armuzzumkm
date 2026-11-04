@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="#000000" name="theme-color"/>
+  <meta content="A product of emergent.sh" name="description"/>
+  <title>
+   Emergent | Fullstack App
+  </title>
+  <script>
+   // Only load visual edit scripts when inside an iframe and visual edits are enabled
+            if (window.self !== window.top && 'false' === 'true') {
+                // Load debug monitor script
+                var debugScript = document.createElement('script');
+                debugScript.src = 'https://assets.emergent.sh/scripts/debug-monitor.js';
+                document.head.appendChild(debugScript);
+
+                // Configure Tailwind
+                window.tailwind = window.tailwind || {};
+                tailwind.config = {
+                    corePlugins: { preflight: false },
+                };
+
+                // Load Tailwind CDN
+                var tailwindScript = document.createElement('script');
+                tailwindScript.src = 'https://cdn.tailwindcss.com';
+                document.head.appendChild(tailwindScript);
+            }
+  </script>
+  <script defer="" src="/static/js/bundle.js">
+  </script>
+  <link href="./style.css" rel="stylesheet"/>
+  <body>
+   <noscript>
+    You need to enable JavaScript to run this app.
+   </noscript>
+   <div id="root">
+    <div class="App">
+     <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="flex items-center justify-between h-16 md:h-20">
+        <a class="text-xl md:text-2xl font-bold tracking-tight" data-discover="true" href="/">
+         <span class="text-white">
+          Alex
+         </span>
+         <span class="text-cyan-400">
+          Morrison
+         </span>
+        </a>
+        <div class="hidden md:flex items-center space-x-8">
+         <a class="text-sm font-medium transition-colors duration-200 text-gray-300 hover:text-white" data-discover="true" href="/">
+          Home
+         </a>
+         <a class="text-sm font-medium transition-colors duration-200 text-cyan-400" data-discover="true" href="/about">
+          About
+         </a>
+         <a class="text-sm font-medium transition-colors duration-200 text-gray-300 hover:text-white" data-discover="true" href="/experience">
+          Experience
+         </a>
+         <a class="text-sm font-medium transition-colors duration-200 text-gray-300 hover:text-white" data-discover="true" href="/portfolio">
+          Portfolio
+         </a>
+         <a class="text-sm font-medium transition-colors duration-200 text-gray-300 hover:text-white" data-discover="true" href="/testimonials">
+          Testimonials
+         </a>
+         <a class="text-sm font-medium transition-colors duration-200 text-gray-300 hover:text-white" data-discover="true" href="/contact">
+          Contact
+         </a>
+        </div>
+        <button aria-label="Toggle menu" class="md:hidden text-white hover:text-cyan-400 transition-colors">
+         <svg aria-hidden="true" class="lucide lucide-menu" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 12h16">
+          </path>
+          <path d="M4 18h16">
+          </path>
+          <path d="M4 6h16">
+          </path>
+         </svg>
+        </button>
+       </div>
+      </div>
+     </nav>
+     <div class="min-h-screen bg-black pt-20">
+      <section class="py-20 bg-gradient-to-b from-gray-900 to-black">
+       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+         <div class="relative">
+          <div class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-orange-400 rounded-2xl blur-2xl opacity-20">
+          </div>
+          <img alt="Alex Morrison" class="relative w-full max-w-md mx-auto rounded-2xl shadow-2xl border-2 border-gray-800" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&amp;h=400&amp;fit=crop"/>
+         </div>
+         <div>
+          <h1 class="text-5xl md:text-6xl font-bold mb-6">
+           <span class="text-white">
+            About
+           </span>
+           <span class="text-cyan-400">
+            Me
+           </span>
+          </h1>
+          <p class="text-gray-300 text-lg leading-relaxed mb-6">
+           I'm a passionate 3D artist and VFX specialist with over 8 years of experience in creating stunning visual content for films, commercials, and interactive media. My work combines technical expertise with artistic vision to bring imaginative concepts to life.
+          </p>
+          <div class="flex flex-wrap gap-4 mb-8">
+           <div class="flex items-center space-x-2">
+            <div class="w-2 h-2 bg-cyan-400 rounded-full">
+            </div>
+            <span class="text-gray-400">
+             Los Angeles, CA
+            </span>
+           </div>
+           <div class="flex items-center space-x-2">
+            <div class="w-2 h-2 bg-orange-400 rounded-full">
+            </div>
+            <span class="text-gray-400">
+             alex.morrison@3dartist.com
+            </span>
+           </div>
+          </div>
+          <div class="flex space-x-4 mb-8">
+           <a aria-label="ArtStation" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:bg-gray-700 transition-all duration-300 hover:scale-110" href="#" rel="noopener noreferrer" target="_blank">
+            <svg aria-hidden="true" class="lucide lucide-palette" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+             <path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z">
+             </path>
+             <circle cx="13.5" cy="6.5" fill="currentColor" r=".5">
+             </circle>
+             <circle cx="17.5" cy="10.5" fill="currentColor" r=".5">
+             </circle>
+             <circle cx="6.5" cy="12.5" fill="currentColor" r=".5">
+             </circle>
+             <circle cx="8.5" cy="7.5" fill="currentColor" r=".5">
+             </circle>
+            </svg>
+           </a>
+           <a aria-label="LinkedIn" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:bg-gray-700 transition-all duration-300 hover:scale-110" href="#" rel="noopener noreferrer" target="_blank">
+            <svg aria-hidden="true" class="lucide lucide-linkedin" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+             </path>
+             <rect height="12" width="4" x="2" y="9">
+             </rect>
+             <circle cx="4" cy="4" r="2">
+             </circle>
+            </svg>
+           </a>
+           <a aria-label="Instagram" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:bg-gray-700 transition-all duration-300 hover:scale-110" href="#" rel="noopener noreferrer" target="_blank">
+            <svg aria-hidden="true" class="lucide lucide-instagram" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+             <rect height="20" rx="5" ry="5" width="20" x="2" y="2">
+             </rect>
+             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z">
+             </path>
+             <line x1="17.5" x2="17.51" y1="6.5" y2="6.5">
+             </line>
+            </svg>
+           </a>
+           <a aria-label="YouTube" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:bg-gray-700 transition-all duration-300 hover:scale-110" href="#" rel="noopener noreferrer" target="_blank">
+            <svg aria-hidden="true" class="lucide lucide-youtube" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+             <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17">
+             </path>
+             <path d="m10 15 5-3-5-3z">
+             </path>
+            </svg>
+           </a>
+           <a aria-label="Behance" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:bg-gray-700 transition-all duration-300 hover:scale-110" href="#" rel="noopener noreferrer" target="_blank">
+            <svg aria-hidden="true" class="lucide lucide-box" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+             <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z">
+             </path>
+             <path d="m3.3 7 8.7 5 8.7-5">
+             </path>
+             <path d="M12 22V12">
+             </path>
+            </svg>
+           </a>
+          </div>
+          <button class="inline-flex items-center px-8 py-3 bg-gradient-to-r from-cyan-400 to-orange-400 text-black font-semibold rounded-full hover:shadow-lg hover:shadow-cyan-400/50 transition-all duration-300 hover:scale-105">
+           <svg aria-hidden="true" class="lucide lucide-download mr-2" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4">
+            </path>
+            <polyline points="7 10 12 15 17 10">
+            </polyline>
+            <line x1="12" x2="12" y1="15" y2="3">
+            </line>
+           </svg>
+           Download Resume
+          </button>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="py-20 bg-black">
+       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 text-center">
+         Software
+         <span class="text-cyan-400">
+          Expertise
+         </span>
+        </h2>
+        <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+         Proficient in industry-standard tools and software
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+         <div class="mb-6">
+          <div class="flex justify-between items-center mb-2">
+           <span class="text-white font-medium text-sm">
+            Blender
+           </span>
+           <span class="text-cyan-400 font-semibold text-sm">
+            95%
+           </span>
+          </div>
+          <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+           <div class="h-full bg-gradient-to-r from-cyan-500 to-cyan-400 rounded-full transition-all duration-1000 ease-out" style="width: 95%;">
+           </div>
+          </div>
+         </div>
+         <div class="mb-6">
+          <div class="flex justify-between items-center mb-2">
+           <span class="text-white font-medium text-sm">
+            Maya
+           </span>
+           <span class="text-cyan-400 font-semibold text-sm">
+            90%
+           </span>
+          </div>
+          <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+           <div class="h-full bg-gradient-to-r from-cyan-500 to-cyan-400 rounded-full transition-all duration-1000 ease-out" style="width: 90%;">
+           </div>
+          </div>
+         </div>
+         <div class="mb-6">
+          <div class="flex justify-between items-center mb-2">
+           <span class="text-white font-medium text-sm">
+            After Effects
+           </span>
+           <span class="text-cyan-400 font-semibold text-sm">
+            88%
+           </span>
+          </div>
+          <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+           <div class="h-full bg-gradient-to-r from-cyan-500 to-cyan-400 rounded-full transition-all duration-1000 ease-out" style="width: 88%;">
+           </div>
+          </div>
+         </div>
+         <div class="mb-6">
+          <div class="flex justify-between items-center mb-2">
+           <span class="text-white font-medium text-sm">
+            Nuke
+           </span>
+           <span class="text-cyan-400 font-semibold text-sm">
+            85%
+           </span>
+          </div>
+          <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+           <div class="h-full bg-gradient-to-r from-cyan-500 to-cyan-400 rounded-full transition-all duration-1000 ease-out" style="width: 85%;">
+           </div>
+          </div>
+         </div>
+         <div class="mb-6">
+          <div class="flex justify-between items-center mb-2">
+           <span class="text-white font-medium text-sm">
+            Cinema 4D
+           </span>
+           <span class="text-cyan-400 font-semibold text-sm">
+            82%
+           </span>
+          </div>
+          <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+           <div class="h-full bg-gradient-to-r from-cyan-500 to-cyan-400 rounded-full transition-all duration-1000 ease-out" style="width: 0%;">
+           </div>
+          </div>
+         </div>
+         <div class="mb-6">
+          <div class="flex justify-between items-center mb-2">
+           <span class="text-white font-medium text-sm">
+            Houdini
+           </span>
+           <span class="text-cyan-400 font-semibold text-sm">
+            78%
+           </span>
+          </div>
+          <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+           <div class="h-full bg-gradient-to-r from-cyan-500 to-cyan-400 rounded-full transition-all duration-1000 ease-out" style="width: 0%;">
+           </div>
+          </div>
+         </div>
+         <div class="mb-6">
+          <div class="flex justify-between items-center mb-2">
+           <span class="text-white font-medium text-sm">
+            Substance Painter
+           </span>
+           <span class="text-cyan-400 font-semibold text-sm">
+            92%
+           </span>
+          </div>
+          <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+           <div class="h-full bg-gradient-to-r from-cyan-500 to-cyan-400 rounded-full transition-all duration-1000 ease-out" style="width: 0%;">
+           </div>
+          </div>
+         </div>
+         <div class="mb-6">
+          <div class="flex justify-between items-center mb-2">
+           <span class="text-white font-medium text-sm">
+            Unreal Engine
+           </span>
+           <span class="text-cyan-400 font-semibold text-sm">
+            80%
+           </span>
+          </div>
+          <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+           <div class="h-full bg-gradient-to-r from-cyan-500 to-cyan-400 rounded-full transition-all duration-1000 ease-out" style="width: 0%;">
+           </div>
+          </div>
+         </div>
+         <div class="mb-6">
+          <div class="flex justify-between items-center mb-2">
+           <span class="text-white font-medium text-sm">
+            ZBrush
+           </span>
+           <span class="text-cyan-400 font-semibold text-sm">
+            87%
+           </span>
+          </div>
+          <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+           <div class="h-full bg-gradient-to-r from-cyan-500 to-cyan-400 rounded-full transition-all duration-1000 ease-out" style="width: 0%;">
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="py-20 bg-gray-900">
+       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-12 text-center">
+         Core
+         <span class="text-orange-400">
+          Skills
+         </span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+         <div class="mb-6">
+          <div class="flex justify-between items-center mb-2">
+           <span class="text-white font-medium text-sm">
+            3D Modeling
+           </span>
+           <span class="text-cyan-400 font-semibold text-sm">
+            95%
+           </span>
+          </div>
+          <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+           <div class="h-full bg-gradient-to-r from-cyan-500 to-cyan-400 rounded-full transition-all duration-1000 ease-out" style="width: 0%;">
+           </div>
+          </div>
+         </div>
+         <div class="mb-6">
+          <div class="flex justify-between items-center mb-2">
+           <span class="text-white font-medium text-sm">
+            Texturing &amp; Shading
+           </span>
+           <span class="text-cyan-400 font-semibold text-sm">
+            92%
+           </span>
+          </div>
+          <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+           <div class="h-full bg-gradient-to-r from-cyan-500 to-cyan-400 rounded-full transition-all duration-1000 ease-out" style="width: 0%;">
+           </div>
+          </div>
+         </div>
+         <div class="mb-6">
+          <div class="flex justify-between items-center mb-2">
+           <span class="text-white font-medium text-sm">
+            Animation
+           </span>
+           <span class="text-cyan-400 font-semibold text-sm">
+            85%
+           </span>
+          </div>
+          <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+           <div class="h-full bg-gradient-to-r from-cyan-500 to-cyan-400 rounded-full transition-all duration-1000 ease-out" style="width: 0%;">
+           </div>
+          </div>
+         </div>
+         <div class="mb-6">
+          <div class="flex justify-between items-center mb-2">
+           <span class="text-white font-medium text-sm">
+            Visual Effects
+           </span>
+           <span class="text-cyan-400 font-semibold text-sm">
+            90%
+           </span>
+          </div>
+          <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+           <div class="h-full bg-gradient-to-r from-cyan-500 to-cyan-400 rounded-full transition-all duration-1000 ease-out" style="width: 0%;">
+           </div>
+          </div>
+         </div>
+         <div class="mb-6">
+          <div class="flex justify-between items-center mb-2">
+           <span class="text-white font-medium text-sm">
+            Compositing
+           </span>
+           <span class="text-cyan-400 font-semibold text-sm">
+            88%
+           </span>
+          </div>
+          <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+           <div class="h-full bg-gradient-to-r from-cyan-500 to-cyan-400 rounded-full transition-all duration-1000 ease-out" style="width: 0%;">
+           </div>
+          </div>
+         </div>
+         <div class="mb-6">
+          <div class="flex justify-between items-center mb-2">
+           <span class="text-white font-medium text-sm">
+            Lighting &amp; Rendering
+           </span>
+           <span class="text-cyan-400 font-semibold text-sm">
+            93%
+           </span>
+          </div>
+          <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+           <div class="h-full bg-gradient-to-r from-cyan-500 to-cyan-400 rounded-full transition-all duration-1000 ease-out" style="width: 0%;">
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="py-20 bg-black">
+       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-center mb-12">
+         <svg aria-hidden="true" class="lucide lucide-award text-cyan-400 mr-3" fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+          <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526">
+          </path>
+          <circle cx="12" cy="8" r="6">
+          </circle>
+         </svg>
+         <h2 class="text-4xl md:text-5xl font-bold text-white">
+          Achievements &amp;
+          <span class="text-cyan-400">
+           Awards
+          </span>
+         </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+         <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/10">
+          <div class="flex items-start justify-between mb-3">
+           <h3 class="text-white font-semibold text-lg flex-1">
+            Best VFX - International Film Festival
+           </h3>
+           <span class="text-cyan-400 font-bold text-sm bg-cyan-400/10 px-3 py-1 rounded-full">
+            2023
+           </span>
+          </div>
+          <p class="text-gray-400 text-sm">
+           Won Best Visual Effects for short film 'Digital Dreams'
+          </p>
+         </div>
+         <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/10">
+          <div class="flex items-start justify-between mb-3">
+           <h3 class="text-white font-semibold text-lg flex-1">
+            Excellence in 3D Design Award
+           </h3>
+           <span class="text-cyan-400 font-bold text-sm bg-cyan-400/10 px-3 py-1 rounded-full">
+            2022
+           </span>
+          </div>
+          <p class="text-gray-400 text-sm">
+           Recognized by CGSociety for outstanding character work
+          </p>
+         </div>
+         <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/10">
+          <div class="flex items-start justify-between mb-3">
+           <h3 class="text-white font-semibold text-lg flex-1">
+            Top 10 - Blender Artists Competition
+           </h3>
+           <span class="text-cyan-400 font-bold text-sm bg-cyan-400/10 px-3 py-1 rounded-full">
+            2021
+           </span>
+          </div>
+          <p class="text-gray-400 text-sm">
+           Featured in Blender Foundation's annual showcase
+          </p>
+         </div>
+         <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/10">
+          <div class="flex items-start justify-between mb-3">
+           <h3 class="text-white font-semibold text-lg flex-1">
+            Featured Artist - ArtStation
+           </h3>
+           <span class="text-cyan-400 font-bold text-sm bg-cyan-400/10 px-3 py-1 rounded-full">
+            2020
+           </span>
+          </div>
+          <p class="text-gray-400 text-sm">
+           Selected as featured artist for character design portfolio
+          </p>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="py-20 bg-gray-900">
+       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-center mb-12">
+         <svg aria-hidden="true" class="lucide lucide-graduation-cap text-orange-400 mr-3" fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z">
+          </path>
+          <path d="M22 10v6">
+          </path>
+          <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5">
+          </path>
+         </svg>
+         <h2 class="text-4xl md:text-5xl font-bold text-white">
+          <span class="text-orange-400">
+           Education
+          </span>
+         </h2>
+        </div>
+        <div class="space-y-6 max-w-4xl mx-auto">
+         <div class="bg-gray-800 border border-gray-700 rounded-lg p-6 hover:border-orange-400/50 transition-all duration-300">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+           <h3 class="text-white font-semibold text-xl mb-2 md:mb-0">
+            Master of Fine Arts in Digital Media
+           </h3>
+           <span class="text-orange-400 font-medium text-sm bg-orange-400/10 px-3 py-1 rounded-full inline-block w-fit">
+            2016-2018
+           </span>
+          </div>
+          <p class="text-cyan-400 font-medium mb-2">
+           California Institute of the Arts
+          </p>
+          <p class="text-gray-400 text-sm">
+           Specialized in 3D animation and visual effects
+          </p>
+         </div>
+         <div class="bg-gray-800 border border-gray-700 rounded-lg p-6 hover:border-orange-400/50 transition-all duration-300">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+           <h3 class="text-white font-semibold text-xl mb-2 md:mb-0">
+            Bachelor of Arts in Animation
+           </h3>
+           <span class="text-orange-400 font-medium text-sm bg-orange-400/10 px-3 py-1 rounded-full inline-block w-fit">
+            2012-2016
+           </span>
+          </div>
+          <p class="text-cyan-400 font-medium mb-2">
+           Ringling College of Art and Design
+          </p>
+          <p class="text-gray-400 text-sm">
+           Focus on character animation and modeling
+          </p>
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+     <footer class="bg-black border-t border-gray-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+         <h3 class="text-2xl font-bold mb-4">
+          <span class="text-white">
+           Alex
+          </span>
+          <span class="text-cyan-400">
+           Morrison
+          </span>
+         </h3>
+         <p class="text-gray-400 text-sm mb-4">
+          3D Artist &amp; VFX Specialist crafting immersive digital experiences
+         </p>
+        </div>
+        <div>
+         <h4 class="text-white font-semibold mb-4">
+          Quick Links
+         </h4>
+         <div class="flex flex-col space-y-2">
+          <a class="text-gray-400 hover:text-cyan-400 text-sm transition-colors" data-discover="true" href="/about">
+           About Me
+          </a>
+          <a class="text-gray-400 hover:text-cyan-400 text-sm transition-colors" data-discover="true" href="/portfolio">
+           Portfolio
+          </a>
+          <a class="text-gray-400 hover:text-cyan-400 text-sm transition-colors" data-discover="true" href="/experience">
+           Experience
+          </a>
+          <a class="text-gray-400 hover:text-cyan-400 text-sm transition-colors" data-discover="true" href="/contact">
+           Contact
+          </a>
+         </div>
+        </div>
+        <div>
+         <h4 class="text-white font-semibold mb-4">
+          Connect
+         </h4>
+         <div class="flex space-x-4">
+          <a aria-label="ArtStation" class="text-gray-400 hover:text-cyan-400 transition-colors" href="#" rel="noopener noreferrer" target="_blank">
+           <svg aria-hidden="true" class="lucide lucide-palette" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z">
+            </path>
+            <circle cx="13.5" cy="6.5" fill="currentColor" r=".5">
+            </circle>
+            <circle cx="17.5" cy="10.5" fill="currentColor" r=".5">
+            </circle>
+            <circle cx="6.5" cy="12.5" fill="currentColor" r=".5">
+            </circle>
+            <circle cx="8.5" cy="7.5" fill="currentColor" r=".5">
+            </circle>
+           </svg>
+          </a>
+          <a aria-label="LinkedIn" class="text-gray-400 hover:text-cyan-400 transition-colors" href="#" rel="noopener noreferrer" target="_blank">
+           <svg aria-hidden="true" class="lucide lucide-linkedin" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+            </path>
+            <rect height="12" width="4" x="2" y="9">
+            </rect>
+            <circle cx="4" cy="4" r="2">
+            </circle>
+           </svg>
+          </a>
+          <a aria-label="Instagram" class="text-gray-400 hover:text-cyan-400 transition-colors" href="#" rel="noopener noreferrer" target="_blank">
+           <svg aria-hidden="true" class="lucide lucide-instagram" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+            <rect height="20" rx="5" ry="5" width="20" x="2" y="2">
+            </rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z">
+            </path>
+            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5">
+            </line>
+           </svg>
+          </a>
+          <a aria-label="YouTube" class="text-gray-400 hover:text-cyan-400 transition-colors" href="#" rel="noopener noreferrer" target="_blank">
+           <svg aria-hidden="true" class="lucide lucide-youtube" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17">
+            </path>
+            <path d="m10 15 5-3-5-3z">
+            </path>
+           </svg>
+          </a>
+          <a aria-label="Behance" class="text-gray-400 hover:text-cyan-400 transition-colors" href="#" rel="noopener noreferrer" target="_blank">
+           <svg aria-hidden="true" class="lucide lucide-box" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z">
+            </path>
+            <path d="m3.3 7 8.7 5 8.7-5">
+            </path>
+            <path d="M12 22V12">
+            </path>
+           </svg>
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="mt-12 pt-8 border-t border-gray-800 text-center">
+        <p class="text-gray-500 text-sm">
+         &copy; 2025 Alex Morrison. All rights reserved.
+        </p>
+       </div>
+      </div>
+     </footer>
+     <div aria-label="Notifications (F8)" role="region" style="pointer-events: none;" tabindex="-1">
+      <ol class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]" tabindex="-1">
+      </ol>
+     </div>
+    </div>
+   </div>
+   </a>
+   <script crossorigin="anonymous" src="https://us-assets.i.posthog.com/static/web-vitals.js?v=1.297.0" type="text/javascript">
+   </script>
+   <script crossorigin="anonymous" src="https://us-assets.i.posthog.com/static/surveys.js?v=1.297.0" type="text/javascript">
+   </script>
+   <script crossorigin="anonymous" src="https://us-assets.i.posthog.com/static/lazy-recorder.js?v=1.297.0" type="text/javascript">
+   </script>
+   <script crossorigin="anonymous" src="https://us-assets.i.posthog.com/array/phc_yJW1VjHGGwmCbbrtczfqqNxgBDbhlhOWcdzcIJEOTFE/config.js" type="text/javascript">
+   </script>
+   <script>
+    !(function (t, e) {
+                var o, n, p, r;
+                e.__SV ||
+                    ((window.posthog = e),
+                    (e._i = []),
+                    (e.init = function (i, s, a) {
+                        function g(t, e) {
+                            var o = e.split(".");
+                            2 == o.length && ((t = t[o[0]]), (e = o[1])),
+                                (t[e] = function () {
+                                    t.push(
+                                        [e].concat(
+                                            Array.prototype.slice.call(
+                                                arguments,
+                                                0,
+                                            ),
+                                        ),
+                                    );
+                                });
+                        }
+                        ((p = t.createElement("script")).type =
+                            "text/javascript"),
+                            (p.crossOrigin = "anonymous"),
+                            (p.async = !0),
+                            (p.src =
+                                s.api_host.replace(
+                                    ".i.posthog.com",
+                                    "-assets.i.posthog.com",
+                                ) + "/static/array.js"),
+                            (r =
+                                t.getElementsByTagName(
+                                    "script",
+                                )[0]).parentNode.insertBefore(p, r);
+                        var u = e;
+                        for (
+                            void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
+                                u.people = u.people || [],
+                                u.toString = function (t) {
+                                    var e = "posthog";
+                                    return (
+                                        "posthog" !== a && (e += "." + a),
+                                        t || (e += " (stub)"),
+                                        e
+                                    );
+                                },
+                                u.people.toString = function () {
+                                    return u.toString(1) + ".people (stub)";
+                                },
+                                o =
+                                    "init me ws ys ps bs capture je Di ks register register_once register_for_session unregister unregister_for_session Ps getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Es $s createPersonProfile Is opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing Ss debug xs getPageViewId captureTraceFeedback captureTraceMetric".split(
+                                        " ",
+                                    ),
+                                n = 0;
+                            n < o.length;
+                            n++
+                        )
+                            g(u, o[n]);
+                        e._i.push([i, s, a]);
+                    }),
+                    (e.__SV = 1));
+            })(document, window.posthog || []);
+            posthog.init("phc_yJW1VjHGGwmCbbrtczfqqNxgBDbhlhOWcdzcIJEOTFE", {
+                api_host: "https://us.i.posthog.com",
+                person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well
+            });
+   </script>
+  </body>
+ </head>
+</html>

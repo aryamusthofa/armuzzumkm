@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Illustrative social feed visual set</title>
+  <desc id="desc">A three-tile product feed concept using warm colors and simple product shapes.</desc>
+  <rect width="900" height="1100" fill="#e8e1d3"/>
+  <rect x="45" y="45" width="276" height="48" rx="24" fill="#fff" opacity=".86"/>
+  <text x="183" y="76" text-anchor="middle" fill="#465142" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="2">CONCEPT SAMPLE</text>
+  <text x="70" y="174" fill="#334236" font-family="Georgia,serif" font-size="48">A small brand,</text>
+  <text x="70" y="232" fill="#334236" font-family="Georgia,serif" font-size="48">one clear rhythm.</text>
+  <g transform="translate(62 310)">
+    <rect width="238" height="520" rx="12" fill="#bbcfad"/>
+    <circle cx="119" cy="188" r="79" fill="#e9ddbd"/>
+    <rect x="81" y="154" width="76" height="181" rx="22" fill="#f4f0e2"/>
+    <rect x="98" y="131" width="42" height="30" rx="8" fill="#728867"/>
+    <text x="119" y="406" text-anchor="middle" fill="#324536" font-family="Arial,sans-serif" font-size="18" font-weight="700">BOTANIC</text>
+  </g>
+  <g transform="translate(331 310)">
+    <rect width="238" height="520" rx="12" fill="#d59e7c"/>
+    <circle cx="119" cy="193" r="76" fill="#f0c699"/>
+    <path d="M70 239h99l-9 140q-42 34-82 0Z" fill="#f5e4ce"/>
+    <path d="M161 270h24q34 0 31 33t-39 32" fill="none" stroke="#f5e4ce" stroke-width="12"/>
+    <text x="119" y="442" text-anchor="middle" fill="#603f32" font-family="Georgia,serif" font-size="24">daily pause</text>
+  </g>
+  <g transform="translate(600 310)">
+    <rect width="238" height="520" rx="12" fill="#c9bfd7"/>
+    <circle cx="119" cy="200" r="80" fill="#ede2d5"/>
+    <path d="M66 288q53-84 106 0v93H66Z" fill="#76836d"/>
+    <path d="M83 325h72" stroke="#ede2d5" stroke-width="8" stroke-linecap="round"/>
+    <text x="119" y="443" text-anchor="middle" fill="#434255" font-family="Arial,sans-serif" font-size="18" font-weight="700">MAKE SPACE</text>
+  </g>
+  <text x="70" y="930" fill="#566052" font-family="Arial,sans-serif" font-size="22" letter-spacing="2">THREE TILES · ONE VISUAL DIRECTION</text>
+</svg>

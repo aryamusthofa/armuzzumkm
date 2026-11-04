@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="#000000" name="theme-color"/>
+  <meta content="A product of emergent.sh" name="description"/>
+  <title>
+   Emergent | Fullstack App
+  </title>
+  <script>
+   // Only load visual edit scripts when inside an iframe and visual edits are enabled
+            if (window.self !== window.top && 'false' === 'true') {
+                // Load debug monitor script
+                var debugScript = document.createElement('script');
+                debugScript.src = 'https://assets.emergent.sh/scripts/debug-monitor.js';
+                document.head.appendChild(debugScript);
+
+                // Configure Tailwind
+                window.tailwind = window.tailwind || {};
+                tailwind.config = {
+                    corePlugins: { preflight: false },
+                };
+
+                // Load Tailwind CDN
+                var tailwindScript = document.createElement('script');
+                tailwindScript.src = 'https://cdn.tailwindcss.com';
+                document.head.appendChild(tailwindScript);
+            }
+  </script>
+  <script defer="" src="/static/js/bundle.js">
+  </script>
+  <link href="./style.css" rel="stylesheet"/>
+  <body>
+   &lt;!-- ===== BODY: App Root ===== --&gt;
+   <noscript>
+    You need to enable JavaScript to run this app.
+   </noscript>
+   <div id="root">
+    <div class="App">
+     <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-black/80 backdrop-blur-lg shadow-lg">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="flex items-center justify-between h-16 md:h-20">
+        <a class="text-xl md:text-2xl font-bold tracking-tight" data-discover="true" href="/">
+         <span class="text-white">
+          Alex
+         </span>
+         <span class="text-cyan-400">
+          Morrison
+         </span>
+        </a>
+        <div class="hidden md:flex items-center space-x-8">
+         <a class="text-sm font-medium transition-colors duration-200 text-gray-300 hover:text-white" data-discover="true" href="/">
+          Home
+         </a>
+         <a class="text-sm font-medium transition-colors duration-200 text-gray-300 hover:text-white" data-discover="true" href="/about">
+          About
+         </a>
+         <a class="text-sm font-medium transition-colors duration-200 text-cyan-400" data-discover="true" href="/experience">
+          Experience
+         </a>
+         <a class="text-sm font-medium transition-colors duration-200 text-gray-300 hover:text-white" data-discover="true" href="/portfolio">
+          Portfolio
+         </a>
+         <a class="text-sm font-medium transition-colors duration-200 text-gray-300 hover:text-white" data-discover="true" href="/testimonials">
+          Testimonials
+         </a>
+         <a class="text-sm font-medium transition-colors duration-200 text-gray-300 hover:text-white" data-discover="true" href="/contact">
+          Contact
+         </a>
+        </div>
+        <button aria-label="Toggle menu" class="md:hidden text-white hover:text-cyan-400 transition-colors">
+         <svg aria-hidden="true" class="lucide lucide-menu" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 12h16">
+          </path>
+          <path d="M4 18h16">
+          </path>
+          <path d="M4 6h16">
+          </path>
+         </svg>
+        </button>
+       </div>
+      </div>
+     </nav>
+     <div class="min-h-screen bg-black pt-20">
+      <section class="py-20 bg-gradient-to-b from-gray-900 to-black">
+       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">
+         <span class="text-white">
+          Professional
+         </span>
+         <span class="text-cyan-400">
+          Experience
+         </span>
+        </h1>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+         A journey through my professional career in 3D art and visual effects
+        </p>
+       </div>
+      </section>
+      <section class="py-20 bg-black">
+       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="space-y-12">
+         <div class="relative">
+          <div class="absolute left-6 top-16 bottom-0 w-0.5 bg-gradient-to-b from-cyan-400 to-transparent hidden md:block">
+          </div>
+          <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 md:p-8 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/10">
+           <div class="absolute left-6 top-8 w-4 h-4 bg-cyan-400 rounded-full border-4 border-black hidden md:block">
+           </div>
+           <div class="md:ml-8">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+             <div>
+              <h3 class="text-white font-bold text-2xl mb-2">
+               Senior 3D Artist
+              </h3>
+              <div class="flex items-center text-cyan-400 font-medium mb-1">
+               <svg aria-hidden="true" class="lucide lucide-briefcase mr-2" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16">
+                </path>
+                <rect height="14" rx="2" width="20" x="2" y="6">
+                </rect>
+               </svg>
+               Pixelworks Studios
+              </div>
+              <div class="flex items-center text-gray-400 text-sm">
+               <svg aria-hidden="true" class="lucide lucide-map-pin mr-2" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
+                </path>
+                <circle cx="12" cy="10" r="3">
+                </circle>
+               </svg>
+               Los Angeles, CA
+              </div>
+             </div>
+             <div class="flex items-center text-orange-400 font-semibold mt-4 md:mt-0 bg-orange-400/10 px-4 py-2 rounded-full w-fit">
+              <svg aria-hidden="true" class="lucide lucide-calendar mr-2" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+               <path d="M8 2v4">
+               </path>
+               <path d="M16 2v4">
+               </path>
+               <rect height="18" rx="2" width="18" x="3" y="4">
+               </rect>
+               <path d="M3 10h18">
+               </path>
+              </svg>
+              2021 - Present
+             </div>
+            </div>
+            <p class="text-gray-300 mb-4">
+             Leading 3D asset creation for AAA game titles and cinematic trailers. Managing team of 5 junior artists.
+            </p>
+            <div class="space-y-2">
+             <div class="flex items-start">
+              <div class="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 mr-3 flex-shrink-0">
+              </div>
+              <span class="text-gray-400 text-sm">
+               Character modeling and texturing for game cinematics
+              </span>
+             </div>
+             <div class="flex items-start">
+              <div class="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 mr-3 flex-shrink-0">
+              </div>
+              <span class="text-gray-400 text-sm">
+               Environment design and world-building
+              </span>
+             </div>
+             <div class="flex items-start">
+              <div class="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 mr-3 flex-shrink-0">
+              </div>
+              <span class="text-gray-400 text-sm">
+               Real-time rendering optimization
+              </span>
+             </div>
+             <div class="flex items-start">
+              <div class="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 mr-3 flex-shrink-0">
+              </div>
+              <span class="text-gray-400 text-sm">
+               Mentoring junior team members
+              </span>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="relative">
+          <div class="absolute left-6 top-16 bottom-0 w-0.5 bg-gradient-to-b from-cyan-400 to-transparent hidden md:block">
+          </div>
+          <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 md:p-8 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/10">
+           <div class="absolute left-6 top-8 w-4 h-4 bg-cyan-400 rounded-full border-4 border-black hidden md:block">
+           </div>
+           <div class="md:ml-8">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+             <div>
+              <h3 class="text-white font-bold text-2xl mb-2">
+               VFX Artist
+              </h3>
+              <div class="flex items-center text-cyan-400 font-medium mb-1">
+               <svg aria-hidden="true" class="lucide lucide-briefcase mr-2" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16">
+                </path>
+                <rect height="14" rx="2" width="20" x="2" y="6">
+                </rect>
+               </svg>
+               Digital Dreams Production
+              </div>
+              <div class="flex items-center text-gray-400 text-sm">
+               <svg aria-hidden="true" class="lucide lucide-map-pin mr-2" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
+                </path>
+                <circle cx="12" cy="10" r="3">
+                </circle>
+               </svg>
+               San Francisco, CA
+              </div>
+             </div>
+             <div class="flex items-center text-orange-400 font-semibold mt-4 md:mt-0 bg-orange-400/10 px-4 py-2 rounded-full w-fit">
+              <svg aria-hidden="true" class="lucide lucide-calendar mr-2" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+               <path d="M8 2v4">
+               </path>
+               <path d="M16 2v4">
+               </path>
+               <rect height="18" rx="2" width="18" x="3" y="4">
+               </rect>
+               <path d="M3 10h18">
+               </path>
+              </svg>
+              2019 - 2021
+             </div>
+            </div>
+            <p class="text-gray-300 mb-4">
+             Created visual effects for commercials, music videos, and independent films.
+            </p>
+            <div class="space-y-2">
+             <div class="flex items-start">
+              <div class="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 mr-3 flex-shrink-0">
+              </div>
+              <span class="text-gray-400 text-sm">
+               Particle simulations and dynamics
+              </span>
+             </div>
+             <div class="flex items-start">
+              <div class="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 mr-3 flex-shrink-0">
+              </div>
+              <span class="text-gray-400 text-sm">
+               Compositing and color grading
+              </span>
+             </div>
+             <div class="flex items-start">
+              <div class="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 mr-3 flex-shrink-0">
+              </div>
+              <span class="text-gray-400 text-sm">
+               Motion graphics and title sequences
+              </span>
+             </div>
+             <div class="flex items-start">
+              <div class="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 mr-3 flex-shrink-0">
+              </div>
+              <span class="text-gray-400 text-sm">
+               Client communication and revisions
+              </span>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="relative">
+          <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 md:p-8 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/10">
+           <div class="absolute left-6 top-8 w-4 h-4 bg-cyan-400 rounded-full border-4 border-black hidden md:block">
+           </div>
+           <div class="md:ml-8">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+             <div>
+              <h3 class="text-white font-bold text-2xl mb-2">
+               3D Generalist
+              </h3>
+              <div class="flex items-center text-cyan-400 font-medium mb-1">
+               <svg aria-hidden="true" class="lucide lucide-briefcase mr-2" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16">
+                </path>
+                <rect height="14" rx="2" width="20" x="2" y="6">
+                </rect>
+               </svg>
+               Creative Lab Studios
+              </div>
+              <div class="flex items-center text-gray-400 text-sm">
+               <svg aria-hidden="true" class="lucide lucide-map-pin mr-2" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
+                </path>
+                <circle cx="12" cy="10" r="3">
+                </circle>
+               </svg>
+               Los Angeles, CA
+              </div>
+             </div>
+             <div class="flex items-center text-orange-400 font-semibold mt-4 md:mt-0 bg-orange-400/10 px-4 py-2 rounded-full w-fit">
+              <svg aria-hidden="true" class="lucide lucide-calendar mr-2" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+               <path d="M8 2v4">
+               </path>
+               <path d="M16 2v4">
+               </path>
+               <rect height="18" rx="2" width="18" x="3" y="4">
+               </rect>
+               <path d="M3 10h18">
+               </path>
+              </svg>
+              2018 - 2019
+             </div>
+            </div>
+            <p class="text-gray-300 mb-4">
+             Versatile role handling modeling, animation, and rendering for various projects.
+            </p>
+            <div class="space-y-2">
+             <div class="flex items-start">
+              <div class="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 mr-3 flex-shrink-0">
+              </div>
+              <span class="text-gray-400 text-sm">
+               Product visualization and advertising
+              </span>
+             </div>
+             <div class="flex items-start">
+              <div class="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 mr-3 flex-shrink-0">
+              </div>
+              <span class="text-gray-400 text-sm">
+               Architectural rendering
+              </span>
+             </div>
+             <div class="flex items-start">
+              <div class="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 mr-3 flex-shrink-0">
+              </div>
+              <span class="text-gray-400 text-sm">
+               Character rigging and animation
+              </span>
+             </div>
+             <div class="flex items-start">
+              <div class="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 mr-3 flex-shrink-0">
+              </div>
+              <span class="text-gray-400 text-sm">
+               Rendering and post-production
+              </span>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="py-20 bg-gray-900">
+       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 text-center">
+         Trusted by
+         <span class="text-cyan-400">
+          Industry Leaders
+         </span>
+        </h2>
+        <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+         Collaborated with top companies worldwide
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+         <div class="bg-gray-800 border border-gray-700 rounded-lg p-4 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105 flex flex-col items-center justify-center group">
+          <div class="w-full aspect-video bg-gray-700 rounded-lg overflow-hidden mb-3">
+           <img alt="Netflix" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=200&amp;h=100&amp;fit=crop"/>
+          </div>
+          <p class="text-white text-sm font-semibold text-center">
+           Netflix
+          </p>
+          <p class="text-gray-500 text-xs text-center">
+           USA
+          </p>
+         </div>
+         <div class="bg-gray-800 border border-gray-700 rounded-lg p-4 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105 flex flex-col items-center justify-center group">
+          <div class="w-full aspect-video bg-gray-700 rounded-lg overflow-hidden mb-3">
+           <img alt="Warner Bros" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?w=200&amp;h=100&amp;fit=crop"/>
+          </div>
+          <p class="text-white text-sm font-semibold text-center">
+           Warner Bros
+          </p>
+          <p class="text-gray-500 text-xs text-center">
+           USA
+          </p>
+         </div>
+         <div class="bg-gray-800 border border-gray-700 rounded-lg p-4 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105 flex flex-col items-center justify-center group">
+          <div class="w-full aspect-video bg-gray-700 rounded-lg overflow-hidden mb-3">
+           <img alt="Electronic Arts" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=200&amp;h=100&amp;fit=crop"/>
+          </div>
+          <p class="text-white text-sm font-semibold text-center">
+           Electronic Arts
+          </p>
+          <p class="text-gray-500 text-xs text-center">
+           USA
+          </p>
+         </div>
+         <div class="bg-gray-800 border border-gray-700 rounded-lg p-4 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105 flex flex-col items-center justify-center group">
+          <div class="w-full aspect-video bg-gray-700 rounded-lg overflow-hidden mb-3">
+           <img alt="Adobe" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" src="https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=200&amp;h=100&amp;fit=crop"/>
+          </div>
+          <p class="text-white text-sm font-semibold text-center">
+           Adobe
+          </p>
+          <p class="text-gray-500 text-xs text-center">
+           USA
+          </p>
+         </div>
+         <div class="bg-gray-800 border border-gray-700 rounded-lg p-4 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105 flex flex-col items-center justify-center group">
+          <div class="w-full aspect-video bg-gray-700 rounded-lg overflow-hidden mb-3">
+           <img alt="Epic Games" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=200&amp;h=100&amp;fit=crop"/>
+          </div>
+          <p class="text-white text-sm font-semibold text-center">
+           Epic Games
+          </p>
+          <p class="text-gray-500 text-xs text-center">
+           USA
+          </p>
+         </div>
+         <div class="bg-gray-800 border border-gray-700 rounded-lg p-4 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105 flex flex-col items-center justify-center group">
+          <div class="w-full aspect-video bg-gray-700 rounded-lg overflow-hidden mb-3">
+           <img alt="Riot Games" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" src="https://images.unsplash.com/photo-1560419015-7c427e8ae5ba?w=200&amp;h=100&amp;fit=crop"/>
+          </div>
+          <p class="text-white text-sm font-semibold text-center">
+           Riot Games
+          </p>
+          <p class="text-gray-500 text-xs text-center">
+           USA
+          </p>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="py-20 bg-black">
+       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-center mb-12">
+         <svg aria-hidden="true" class="lucide lucide-award text-orange-400 mr-3" fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+          <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526">
+          </path>
+          <circle cx="12" cy="8" r="6">
+          </circle>
+         </svg>
+         <h2 class="text-4xl md:text-5xl font-bold text-white">
+          Certifications &amp;
+          <span class="text-orange-400">
+           Training
+          </span>
+         </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+         <div class="bg-gray-900 border border-gray-800 rounded-lg overflow-hidden hover:border-orange-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-orange-400/10 group">
+          <div class="aspect-video bg-gray-800 overflow-hidden">
+           <img alt="Advanced Character Creation" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&amp;h=300&amp;fit=crop"/>
+          </div>
+          <div class="p-6">
+           <h3 class="text-white font-semibold text-lg mb-2">
+            Advanced Character Creation
+           </h3>
+           <p class="text-cyan-400 text-sm mb-1">
+            Gnomon School
+           </p>
+           <p class="text-gray-500 text-xs">
+            2023
+           </p>
+          </div>
+         </div>
+         <div class="bg-gray-900 border border-gray-800 rounded-lg overflow-hidden hover:border-orange-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-orange-400/10 group">
+          <div class="aspect-video bg-gray-800 overflow-hidden">
+           <img alt="Unreal Engine VFX Master" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://images.unsplash.com/photo-1589149098258-3e9102cd63d3?w=400&amp;h=300&amp;fit=crop"/>
+          </div>
+          <div class="p-6">
+           <h3 class="text-white font-semibold text-lg mb-2">
+            Unreal Engine VFX Master
+           </h3>
+           <p class="text-cyan-400 text-sm mb-1">
+            Epic Games
+           </p>
+           <p class="text-gray-500 text-xs">
+            2022
+           </p>
+          </div>
+         </div>
+         <div class="bg-gray-900 border border-gray-800 rounded-lg overflow-hidden hover:border-orange-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-orange-400/10 group">
+          <div class="aspect-video bg-gray-800 overflow-hidden">
+           <img alt="Advanced Compositing" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&amp;h=300&amp;fit=crop"/>
+          </div>
+          <div class="p-6">
+           <h3 class="text-white font-semibold text-lg mb-2">
+            Advanced Compositing
+           </h3>
+           <p class="text-cyan-400 text-sm mb-1">
+            Foundry
+           </p>
+           <p class="text-gray-500 text-xs">
+            2021
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+     <footer class="bg-black border-t border-gray-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+         <h3 class="text-2xl font-bold mb-4">
+          <span class="text-white">
+           Alex
+          </span>
+          <span class="text-cyan-400">
+           Morrison
+          </span>
+         </h3>
+         <p class="text-gray-400 text-sm mb-4">
+          3D Artist &amp; VFX Specialist crafting immersive digital experiences
+         </p>
+        </div>
+        <div>
+         <h4 class="text-white font-semibold mb-4">
+          Quick Links
+         </h4>
+         <div class="flex flex-col space-y-2">
+          <a class="text-gray-400 hover:text-cyan-400 text-sm transition-colors" data-discover="true" href="/about">
+           About Me
+          </a>
+          <a class="text-gray-400 hover:text-cyan-400 text-sm transition-colors" data-discover="true" href="/portfolio">
+           Portfolio
+          </a>
+          <a class="text-gray-400 hover:text-cyan-400 text-sm transition-colors" data-discover="true" href="/experience">
+           Experience
+          </a>
+          <a class="text-gray-400 hover:text-cyan-400 text-sm transition-colors" data-discover="true" href="/contact">
+           Contact
+          </a>
+         </div>
+        </div>
+        <div>
+         <h4 class="text-white font-semibold mb-4">
+          Connect
+         </h4>
+         <div class="flex space-x-4">
+          <a aria-label="ArtStation" class="text-gray-400 hover:text-cyan-400 transition-colors" href="#" rel="noopener noreferrer" target="_blank">
+           <svg aria-hidden="true" class="lucide lucide-palette" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z">
+            </path>
+            <circle cx="13.5" cy="6.5" fill="currentColor" r=".5">
+            </circle>
+            <circle cx="17.5" cy="10.5" fill="currentColor" r=".5">
+            </circle>
+            <circle cx="6.5" cy="12.5" fill="currentColor" r=".5">
+            </circle>
+            <circle cx="8.5" cy="7.5" fill="currentColor" r=".5">
+            </circle>
+           </svg>
+          </a>
+          <a aria-label="LinkedIn" class="text-gray-400 hover:text-cyan-400 transition-colors" href="#" rel="noopener noreferrer" target="_blank">
+           <svg aria-hidden="true" class="lucide lucide-linkedin" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+            </path>
+            <rect height="12" width="4" x="2" y="9">
+            </rect>
+            <circle cx="4" cy="4" r="2">
+            </circle>
+           </svg>
+          </a>
+          <a aria-label="Instagram" class="text-gray-400 hover:text-cyan-400 transition-colors" href="#" rel="noopener noreferrer" target="_blank">
+           <svg aria-hidden="true" class="lucide lucide-instagram" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+            <rect height="20" rx="5" ry="5" width="20" x="2" y="2">
+            </rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z">
+            </path>
+            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5">
+            </line>
+           </svg>
+          </a>
+          <a aria-label="YouTube" class="text-gray-400 hover:text-cyan-400 transition-colors" href="#" rel="noopener noreferrer" target="_blank">
+           <svg aria-hidden="true" class="lucide lucide-youtube" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17">
+            </path>
+            <path d="m10 15 5-3-5-3z">
+            </path>
+           </svg>
+          </a>
+          <a aria-label="Behance" class="text-gray-400 hover:text-cyan-400 transition-colors" href="#" rel="noopener noreferrer" target="_blank">
+           <svg aria-hidden="true" class="lucide lucide-box" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z">
+            </path>
+            <path d="m3.3 7 8.7 5 8.7-5">
+            </path>
+            <path d="M12 22V12">
+            </path>
+           </svg>
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="mt-12 pt-8 border-t border-gray-800 text-center">
+        <p class="text-gray-500 text-sm">
+         &copy; 2025 Alex Morrison. All rights reserved.
+        </p>
+       </div>
+      </div>
+     </footer>
+     <div aria-label="Notifications (F8)" role="region" style="pointer-events: none;" tabindex="-1">
+      <ol class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]" tabindex="-1">
+      </ol>
+     </div>
+    </div>
+   </div> 
+   <script crossorigin="anonymous" src="https://us-assets.i.posthog.com/static/web-vitals.js?v=1.297.0" type="text/javascript">
+   </script>
+   <script crossorigin="anonymous" src="https://us-assets.i.posthog.com/static/surveys.js?v=1.297.0" type="text/javascript">
+   </script>
+   <script crossorigin="anonymous" src="https://us-assets.i.posthog.com/static/lazy-recorder.js?v=1.297.0" type="text/javascript">
+   </script>
+   <script crossorigin="anonymous" src="https://us-assets.i.posthog.com/array/phc_yJW1VjHGGwmCbbrtczfqqNxgBDbhlhOWcdzcIJEOTFE/config.js" type="text/javascript">
+   </script>
+   <script>
+    !(function (t, e) {
+                var o, n, p, r;
+                e.__SV ||
+                    ((window.posthog = e),
+                    (e._i = []),
+                    (e.init = function (i, s, a) {
+                        function g(t, e) {
+                            var o = e.split(".");
+                            2 == o.length && ((t = t[o[0]]), (e = o[1])),
+                                (t[e] = function () {
+                                    t.push(
+                                        [e].concat(
+                                            Array.prototype.slice.call(
+                                                arguments,
+                                                0,
+                                            ),
+                                        ),
+                                    );
+                                });
+                        }
+                        ((p = t.createElement("script")).type =
+                            "text/javascript"),
+                            (p.crossOrigin = "anonymous"),
+                            (p.async = !0),
+                            (p.src =
+                                s.api_host.replace(
+                                    ".i.posthog.com",
+                                    "-assets.i.posthog.com",
+                                ) + "/static/array.js"),
+                            (r =
+                                t.getElementsByTagName(
+                                    "script",
+                                )[0]).parentNode.insertBefore(p, r);
+                        var u = e;
+                        for (
+                            void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
+                                u.people = u.people || [],
+                                u.toString = function (t) {
+                                    var e = "posthog";
+                                    return (
+                                        "posthog" !== a && (e += "." + a),
+                                        t || (e += " (stub)"),
+                                        e
+                                    );
+                                },
+                                u.people.toString = function () {
+                                    return u.toString(1) + ".people (stub)";
+                                },
+                                o =
+                                    "init me ws ys ps bs capture je Di ks register register_once register_for_session unregister unregister_for_session Ps getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Es $s createPersonProfile Is opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing Ss debug xs getPageViewId captureTraceFeedback captureTraceMetric".split(
+                                        " ",
+                                    ),
+                                n = 0;
+                            n < o.length;
+                            n++
+                        )
+                            g(u, o[n]);
+                        e._i.push([i, s, a]);
+                    }),
+                    (e.__SV = 1));
+            })(document, window.posthog || []);
+            posthog.init("phc_yJW1VjHGGwmCbbrtczfqqNxgBDbhlhOWcdzcIJEOTFE", {
+                api_host: "https://us.i.posthog.com",
+                person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well
+            });
+   </script>
+  </body>
+ </head>
+</html>

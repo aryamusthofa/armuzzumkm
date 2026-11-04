@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Illustrative cinematic travel edit concept</title>
+  <desc id="desc">A stylized dusk mountain landscape, marked as a concept sample.</desc>
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#b6a7c7"/><stop offset=".52" stop-color="#f0bd96"/><stop offset="1" stop-color="#5a6170"/></linearGradient>
+    <linearGradient id="hill" x2="0" y2="1"><stop stop-color="#66736a"/><stop offset="1" stop-color="#202d32"/></linearGradient>
+  </defs>
+  <rect width="900" height="1100" fill="url(#sky)"/>
+  <circle cx="664" cy="362" r="118" fill="#ffe1b3" opacity=".8"/>
+  <path d="m0 683 190-229 133 145 202-272 240 307 135-145v611H0Z" fill="#68717a"/>
+  <path d="m0 745 203-171 165 136 209-207 157 147 166-91v541H0Z" fill="url(#hill)"/>
+  <path d="M0 846q178-92 353 8t547-35v281H0Z" fill="#172329" opacity=".9"/>
+  <path d="M77 801q171-63 294 6M516 753q114-32 233 20" fill="none" stroke="#f4d0ad" stroke-width="5" opacity=".45"/>
+  <rect x="45" y="45" width="276" height="48" rx="24" fill="#fff" opacity=".82"/>
+  <text x="183" y="76" text-anchor="middle" fill="#3c4650" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="2">CONCEPT SAMPLE</text>
+  <text x="70" y="1010" fill="#fff1dd" font-family="Georgia,serif" font-size="54">A slower way through.</text>
+</svg>

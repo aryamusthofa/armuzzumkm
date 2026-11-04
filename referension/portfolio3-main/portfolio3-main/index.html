@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="A product of emergent.sh">
+  <title>Emergent | Fullstack App</title>
+    <script defer="" src="/static/js/bundle.js"></script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+    <body>
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div id="root">
+          <div class="App">
+            
+            <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+              <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16 md:h-20">
+                  <a class="text-xl md:text-2xl font-bold tracking-tight" href="/" data-discover="true">
+                    <span class="text-white">Rena</span><span class="text-cyan-400">ndo</span>
+                  </a>
+                  <div class="hidden md:flex items-center space-x-8">
+                    <a class="text-sm font-medium transition-colors duration-200 text-cyan-400" href="/" data-discover="true">Home</a>
+                    <a class="text-sm font-medium transition-colors duration-200 text-gray-300 hover:text-white" href="/about" data-discover="true">About</a>
+                    <a class="text-sm font-medium transition-colors duration-200 text-gray-300 hover:text-white" href="/experience" data-discover="true">Experience</a>
+                    <a class="text-sm font-medium transition-colors duration-200 text-gray-300 hover:text-white" href="/portfolio" data-discover="true">Portfolio</a>
+                    <a class="text-sm font-medium transition-colors duration-200 text-gray-300 hover:text-white" href="/testimonials" data-discover="true">Testimonials</a>
+                    <a class="text-sm font-medium transition-colors duration-200 text-gray-300 hover:text-white" href="/contact" data-discover="true">Contact</a>
+                  </div>
+                  <button class="md:hidden text-white hover:text-cyan-400 transition-colors" aria-label="Toggle menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu" aria-hidden="true">
+                      <path d="M4 12h16"></path>
+                      <path d="M4 18h16"></path>
+                      <path d="M4 6h16"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </nav>
+            <div class="min-h-screen bg-black">
+              <section class="relative h-screen flex items-center justify-center overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-cyan-900/20 via-black to-orange-900/20">
+                </div>
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,240,255,0.1),transparent_50%)]">
+
+                </div>
+                <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="text-center lg:text-left">
+                      <div class="inline-flex items-center space-x-2 bg-cyan-400/10 border border-cyan-400/20 rounded-full px-4 py-2 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles text-cyan-400" aria-hidden="true">
+                          <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path>
+                          <path d="M20 3v4"></path><path d="M22 5h-4"></path><path d="M4 17v2"></path>
+                          <path d="M5 18H3"></path>
+                        </svg>
+                        <span class="text-cyan-400 text-sm font-medium">Available for Freelance</span>
+                      </div>
+                      <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"><span class="text-white">Hi, I'm </span>
+                        <span class="bg-gradient-to-r from-cyan-400 to-orange-400 bg-clip-text text-transparent">Renando</span>
+                      </h1>
+                      <h2 class="text-2xl md:text-3xl text-gray-300 mb-4 font-light">3D Artist &amp; VFX Specialist</h2>
+                      <p class="text-gray-400 text-lg mb-8 max-w-xl mx-auto lg:mx-0">Crafting Immersive Digital Worlds</p>
+                      <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a class="inline-flex items-center justify-center px-8 py-3 bg-cyan-400 text-black font-semibold rounded-full hover:bg-cyan-300 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/50 hover:scale-105" href="/portfolio" data-discover="true">View Portfolio<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-2" aria-hidden="true">
+                          <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                      </a>
+                      <a class="inline-flex items-center justify-center px-8 py-3 border-2 border-orange-400 text-orange-400 font-semibold rounded-full hover:bg-orange-400 hover:text-black transition-all duration-300 hover:scale-105" href="/contact" data-discover="true">Get in Touch</a>
+                    </div>
+                  
+                  </div>
+                  <div class="relative h-[400px] lg:h-[600px]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
+                    <div class="w-full h-full rounded-2xl bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 flex items-center justify-center relative overflow-hidden">
+                      <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,240,255,0.15),transparent_70%)]"></div>
+                      <div class="text-center z-10">
+                        <div class="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-cyan-400 to-orange-400 rounded-full flex items-center justify-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles text-black" aria-hidden="true">
+                            <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path>
+                            <path d="M20 3v4"></path>
+                            <path d="M22 5h-4"></path>
+                            <path d="M4 17v2"></path>
+                            <path d="M5 18H3"></path>
+                          </svg>
+                        </div>
+                        <p class="text-gray-400 text-sm">Interactive 3D Character</p>
+                        <p class="text-gray-500 text-xs mt-2">[Spline embed will be integrated here]</p>
+                      </div>
+                      <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-48 h-48 border-2 border-cyan-400/20 rounded-full animate-ping" style="animation-duration: 3s;"></div>
+                      </div>
+                      <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-64 h-64 border-2 border-orange-400/20 rounded-full animate-ping" style="animation-duration: 4s;"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <div class="w-6 h-10 border-2 border-gray-600 rounded-full flex items-start justify-center p-2">
+                  <div class="w-1 h-3 bg-cyan-400 rounded-full"></div></div></div></section><section class="py-20 bg-gradient-to-b from-black to-gray-900">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        <div class="text-center">
+                          <div class="text-4xl md:text-5xl font-bold text-cyan-400 mb-2">8+</div>
+                          <div class="text-gray-400 text-sm">Years Experience</div></div>
+                          <div class="text-center">
+                            <div class="text-4xl md:text-5xl font-bold text-orange-400 mb-2">150+</div>
+                            <div class="text-gray-400 text-sm">Projects Completed</div></div>
+                            <div class="text-center">
+                              <div class="text-4xl md:text-5xl font-bold text-green-400 mb-2">50+</div>
+                              <div class="text-gray-400 text-sm">Happy Clients</div></div><div class="text-center">
+                                <div class="text-4xl md:text-5xl font-bold text-purple-400 mb-2">15+</div>
+                                <div class="text-gray-400 text-sm">Awards Won</div>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
+                        <section class="py-20 bg-gray-900">
+                          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                            <div class="text-center mb-12">
+                              <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Featured <span class="text-cyan-400">Work</span></h2>
+                              <p class="text-gray-400 text-lg max-w-2xl mx-auto">Explore a selection of my latest 3D art and VFX projects</p></div>
+                              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                                <div class="group relative overflow-hidden rounded-lg aspect-video bg-gray-800 cursor-pointer">
+                                  <img alt="Featured work 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=600&amp;h=400&amp;fit=crop">
+                                  <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+                                  <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                                    <h3 class="text-white font-semibold text-lg mb-1">Cyberpunk Character</h3><p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity">Character Design</p></div>
+                                  </div>
+                                  <div class="group relative overflow-hidden rounded-lg aspect-video bg-gray-800 cursor-pointer">
+                                    <img alt="Featured work 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&amp;h=400&amp;fit=crop">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+                                    <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                                      <h3 class="text-white font-semibold text-lg mb-1">Sci-Fi Environment</h3><p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity">3D Environment</p></div>
+                                    </div>
+                                    <div class="group relative overflow-hidden rounded-lg aspect-video bg-gray-800 cursor-pointer">
+                                      <img alt="Featured work 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=600&amp;h=400&amp;fit=crop">
+                                      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+                                      <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                                        <h3 class="text-white font-semibold text-lg mb-1">Product Visualization</h3><p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity">Product Render</p></div>
+                                      </div>
+                                    </div>
+                                    <div class="text-center">
+                                      <a class="inline-flex items-center px-8 py-3 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-full hover:bg-cyan-400 hover:text-black transition-all duration-300 hover:scale-105" href="/portfolio" data-discover="true">View All Projects<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-2" aria-hidden="true">
+                                        <path d="M5 12h14"></path>
+                                        <path d="m12 5 7 7-7 7"></path>
+                                      </svg>
+                                    </a>
+                                  </div>
+                                </div>
+                              </section>
+                            </div>
+                            <footer class="bg-black border-t border-gray-800">
+                              <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                  <div>
+                                    <h3 class="text-2xl font-bold mb-4">
+                                      <span class="text-white">Alex</span>
+                                      <span class="text-cyan-400">Morrison</span>
+                                    </h3>
+                                    <p class="text-gray-400 text-sm mb-4">3D Artist &amp; VFX Specialist crafting immersive digital experiences</p>
+                                  </div>
+                                  <div>
+                                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                                    <div class="flex flex-col space-y-2"><a class="text-gray-400 hover:text-cyan-400 text-sm transition-colors" href="/about" data-discover="true">About Me</a>
+                                      <a class="text-gray-400 hover:text-cyan-400 text-sm transition-colors" href="/portfolio" data-discover="true">Portfolio</a>
+                                      <a class="text-gray-400 hover:text-cyan-400 text-sm transition-colors" href="/experience" data-discover="true">Experience</a>
+                                      <a class="text-gray-400 hover:text-cyan-400 text-sm transition-colors" href="/contact" data-discover="true">Contact</a>
+                                    </div>
+                                  </div>
+                                  <div>
+                                    <h4 class="text-white font-semibold mb-4">Connect</h4>
+                                    <div class="flex space-x-4">
+                                      <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-cyan-400 transition-colors" aria-label="ArtStation">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-palette" aria-hidden="true">
+                                        <path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"></path>
+                                        <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
+                                        <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
+                                        <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
+                                        <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
+                                      </svg></a><a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-cyan-400 transition-colors" aria-label="LinkedIn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin" aria-hidden="true">
+                                          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                          <rect width="4" height="12" x="2" y="9"></rect>
+                                          <circle cx="4" cy="4" r="2"></circle>
+                                        </svg>
+                                      </a>
+                                      <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-cyan-400 transition-colors" aria-label="Instagram">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram" aria-hidden="true">
+                                          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                          <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                                        </svg>
+                                      </a>
+                                      <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-cyan-400 transition-colors" aria-label="YouTube">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube" aria-hidden="true">
+                                          <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path>
+                                          <path d="m10 15 5-3-5-3z"></path>
+                                        </svg>
+                                      </a>
+                                      <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-cyan-400 transition-colors" aria-label="Behance">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-box" aria-hidden="true">
+                                        <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+                                        <path d="m3.3 7 8.7 5 8.7-5"></path>
+                                        <path d="M12 22V12"></path>
+                                      </svg>
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="mt-12 pt-8 border-t border-gray-800 text-center">
+                                <p class="text-gray-500 text-sm">© 2025 Alex Morrison. All rights reserved.</p>
+                              </div>
+                            </div>
+                          </footer>
+                          <div role="region" aria-label="Notifications (F8)" tabindex="-1" style="pointer-events: none;">
+                            <ol tabindex="-1" class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]"></ol>
+                          </div>
+                        </div>
+                      </div>
+
+        <script type="text/javascript" crossorigin="anonymous" src="https://us-assets.i.posthog.com/static/web-vitals.js?v=1.297.0"></script>
+        <script type="text/javascript" crossorigin="anonymous" src="https://us-assets.i.posthog.com/static/surveys.js?v=1.297.0"></script>
+        <script type="text/javascript" crossorigin="anonymous" src="https://us-assets.i.posthog.com/static/lazy-recorder.js?v=1.297.0"></script>
+        <script type="text/javascript" crossorigin="anonymous" src="https://us-assets.i.posthog.com/array/phc_yJW1VjHGGwmCbbrtczfqqNxgBDbhlhOWcdzcIJEOTFE/config.js"></script>
+        <script>
+            !(function (t, e) {
+                var o, n, p, r;
+                e.__SV ||
+                    ((window.posthog = e),
+                    (e._i = []),
+                    (e.init = function (i, s, a) {
+                        function g(t, e) {
+                            var o = e.split(".");
+                            2 == o.length && ((t = t[o[0]]), (e = o[1])),
+                                (t[e] = function () {
+                                    t.push(
+                                        [e].concat(
+                                            Array.prototype.slice.call(
+                                                arguments,
+                                                0,
+                                            ),
+                                        ),
+                                    );
+                                });
+                        }
+                        ((p = t.createElement("script")).type =
+                            "text/javascript"),
+                            (p.crossOrigin = "anonymous"),
+                            (p.async = !0),
+                            (p.src =
+                                s.api_host.replace(
+                                    ".i.posthog.com",
+                                    "-assets.i.posthog.com",
+                                ) + "/static/array.js"),
+                            (r =
+                                t.getElementsByTagName(
+                                    "script",
+                                )[0]).parentNode.insertBefore(p, r);
+                        var u = e;
+                        for (
+                            void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
+                                u.people = u.people || [],
+                                u.toString = function (t) {
+                                    var e = "posthog";
+                                    return (
+                                        "posthog" !== a && (e += "." + a),
+                                        t || (e += " (stub)"),
+                                        e
+                                    );
+                                },
+                                u.people.toString = function () {
+                                    return u.toString(1) + ".people (stub)";
+                                },
+                                o =
+                                    "init me ws ys ps bs capture je Di ks register register_once register_for_session unregister unregister_for_session Ps getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Es $s createPersonProfile Is opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing Ss debug xs getPageViewId captureTraceFeedback captureTraceMetric".split(
+                                        " ",
+                                    ),
+                                n = 0;
+                            n < o.length;
+                            n++
+                        )
+                            g(u, o[n]);
+                        e._i.push([i, s, a]);
+                    }),
+                    (e.__SV = 1));
+            })(document, window.posthog || []);
+            posthog.init("phc_yJW1VjHGGwmCbbrtczfqqNxgBDbhlhOWcdzcIJEOTFE", {
+                api_host: "https://us.i.posthog.com",
+                person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well
+            });
+        </script>
+    
+
+</body></html>

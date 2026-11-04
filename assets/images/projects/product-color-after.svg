@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Illustrative product photo after color finishing</title>
+  <desc id="desc">A soap bottle in a warm, softly lit studio setting, marked as an illustrative after concept.</desc>
+  <defs>
+    <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#e8d4b8"/><stop offset="1" stop-color="#cba783"/></linearGradient>
+    <linearGradient id="bottle" x2="1"><stop stop-color="#f8f2e7"/><stop offset=".55" stop-color="#fffdf5"/><stop offset="1" stop-color="#d8c8ae"/></linearGradient>
+  </defs>
+  <rect width="900" height="1100" fill="url(#bg)"/>
+  <circle cx="716" cy="235" r="185" fill="#fff5df" opacity=".36"/>
+  <path d="M0 760q220-90 449 10t451-25v355H0Z" fill="#ad8864"/>
+  <ellipse cx="451" cy="870" rx="236" ry="50" fill="#63482e" opacity=".2"/>
+  <rect x="377" y="282" width="150" height="74" rx="16" fill="#876d51"/>
+  <rect x="339" y="342" width="226" height="510" rx="52" fill="url(#bottle)" stroke="#d4c2a8" stroke-width="5"/>
+  <rect x="364" y="408" width="176" height="342" rx="16" fill="#f3ead9"/>
+  <text x="452" y="550" text-anchor="middle" fill="#71806a" font-family="Arial,sans-serif" font-size="23" font-weight="700" letter-spacing="5">BOTANIC</text>
+  <text x="452" y="598" text-anchor="middle" fill="#675543" font-family="Georgia,serif" font-size="35">wash</text>
+  <rect x="45" y="45" width="276" height="48" rx="24" fill="#fff" opacity=".82"/>
+  <text x="183" y="76" text-anchor="middle" fill="#675543" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="2">CONCEPT SAMPLE</text>
+  <text x="70" y="1010" fill="#594630" font-family="Georgia,serif" font-size="54">Warm, balanced finish.</text>
+</svg>

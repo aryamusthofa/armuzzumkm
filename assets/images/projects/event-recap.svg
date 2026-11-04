@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Illustrative community event recap concept</title>
+  <desc id="desc">Abstract shapes suggest a small community gathering and event recap, marked as a concept sample.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#e7a98f"/><stop offset="1" stop-color="#754f6d"/></linearGradient>
+  </defs>
+  <rect width="900" height="1100" fill="url(#bg)"/>
+  <circle cx="723" cy="217" r="185" fill="#f3d9b3" opacity=".32"/>
+  <path d="M0 646q210-171 418-3t482-54v511H0Z" fill="#372f4c" opacity=".74"/>
+  <path d="M0 788q257-145 469-18t431-43v373H0Z" fill="#25293a"/>
+  <path d="M158 605 355 303l186 302M498 605l149-244 173 244" fill="none" stroke="#f7cfaa" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M180 619h165M518 619h266" stroke="#f7cfaa" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="286" cy="741" r="48" fill="#e6bb93"/><circle cx="445" cy="719" r="53" fill="#c47d72"/><circle cx="619" cy="748" r="45" fill="#d9a681"/>
+  <path d="M228 882q58-124 116 0M380 886q64-143 130 0M566 888q54-122 108 0" fill="#e6bb93"/>
+  <rect x="45" y="45" width="276" height="48" rx="24" fill="#fff" opacity=".82"/>
+  <text x="183" y="76" text-anchor="middle" fill="#513b50" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="2">CONCEPT SAMPLE</text>
+  <text x="70" y="1010" fill="#fff0df" font-family="Georgia,serif" font-size="54">A day worth sharing.</text>
+</svg>

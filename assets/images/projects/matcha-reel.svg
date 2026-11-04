@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Illustrative matcha product video concept</title>
+  <desc id="desc">A stylized matcha drink on a bright green and cream background, marked as a concept sample.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#d6e8aa"/><stop offset="1" stop-color="#f3e8cb"/></linearGradient>
+    <linearGradient id="drink" x2=".8" y2="1"><stop stop-color="#9fbd62"/><stop offset="1" stop-color="#516a35"/></linearGradient>
+  </defs>
+  <rect width="900" height="1100" fill="url(#bg)"/>
+  <circle cx="740" cy="210" r="160" fill="#fff" opacity=".32"/>
+  <path d="M0 800Q180 710 385 815t515-5v290H0Z" fill="#e8d9b8"/>
+  <ellipse cx="451" cy="849" rx="230" ry="48" fill="#263522" opacity=".15"/>
+  <path d="M312 365h280l-35 435q-104 85-210 0Z" fill="#fff" opacity=".72"/>
+  <path d="M331 505h242l-20 274q-98 68-190 0Z" fill="url(#drink)"/>
+  <path d="M330 432q120-115 245 0v74H330Z" fill="#f3efe0"/>
+  <path d="M401 418q39-48 85 0" fill="none" stroke="#718a4b" stroke-width="16" stroke-linecap="round"/>
+  <path d="m486 388 64-208" fill="none" stroke="#667b49" stroke-width="22" stroke-linecap="round"/>
+  <rect x="355" y="575" width="195" height="95" rx="8" fill="#f3edda"/>
+  <text x="452" y="618" text-anchor="middle" fill="#34452a" font-family="Arial,sans-serif" font-size="28" font-weight="700" letter-spacing="5">MATCHA</text>
+  <text x="452" y="650" text-anchor="middle" fill="#617448" font-family="Arial,sans-serif" font-size="15" letter-spacing="4">CONCEPT BRAND</text>
+  <rect x="45" y="45" width="276" height="48" rx="24" fill="#fff" opacity=".82"/>
+  <text x="183" y="76" text-anchor="middle" fill="#34452a" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="2">CONCEPT SAMPLE</text>
+  <text x="70" y="1010" fill="#34452a" font-family="Georgia,serif" font-size="54">A fresh little ritual.</text>
+</svg>
