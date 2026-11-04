@@ -9,6 +9,8 @@
   --line: rgba(73, 45, 29, 0.14);
   --ink: #2d201a;
   --muted: #6c564a;
+  --placeholder: #6c564a;
+  --error: #8c2f24;
   --accent: #85492c;
   --accent-hover: #6f3822;
   --accent-ink: #fffdf9;
@@ -36,7 +38,7 @@ html {
 body {
   min-width: 320px;
   margin: 0;
-  background: var(--page);
+  background-color: var(--page);
   background-image: var(--page-decoration);
   color: var(--ink);
   font-family: var(--sans);
@@ -305,6 +307,7 @@ textarea {
   border: 1px solid var(--line);
   border-radius: 50%;
   background: conic-gradient(var(--accent) 0 42%, var(--surface-soft) 42% 100%);
+  transition: background 180ms ease, transform 240ms ease;
 }
 
 .appearance-menu__panel {
@@ -889,7 +892,7 @@ h3 {
 
 .field input::placeholder,
 .field textarea::placeholder {
-  color: #89968d;
+  color: var(--placeholder);
 }
 
 .form-help,
@@ -900,7 +903,7 @@ h3 {
 }
 
 .form-status--error {
-  color: #ffd1c4;
+  color: var(--error);
 }
 
 .contact-links {
@@ -1112,6 +1115,8 @@ html[data-theme="warm-paper"] {
   --line: rgba(73, 45, 29, 0.14);
   --ink: #2d201a;
   --muted: #6c564a;
+  --placeholder: #6c564a;
+  --error: #8c2f24;
   --accent: #85492c;
   --accent-hover: #6f3822;
   --accent-ink: #fffdf9;
@@ -1137,6 +1142,8 @@ html[data-theme="clean-light"] {
   --line: rgba(31, 52, 41, 0.13);
   --ink: #1d2924;
   --muted: #53665b;
+  --placeholder: #53665b;
+  --error: #a32920;
   --accent: #28644a;
   --accent-hover: #194a35;
   --accent-ink: #ffffff;
@@ -1162,6 +1169,8 @@ html[data-theme="deep-dark"] {
   --line: rgba(237, 236, 228, 0.14);
   --ink: #f3f0e8;
   --muted: #b9b8ae;
+  --placeholder: #b9b8ae;
+  --error: #ffb4a8;
   --accent: #e5b58b;
   --accent-hover: #f1c89f;
   --accent-ink: #241a13;
@@ -1189,6 +1198,8 @@ html[data-theme="rgb-pulse"] {
   --line: rgba(218, 226, 255, 0.16);
   --ink: #eff2ff;
   --muted: #b7c0d8;
+  --placeholder: #b7c0d8;
+  --error: #ffaba2;
   --accent: #aab8ff;
   --accent-hover: #c3ccff;
   --accent-ink: #151827;
@@ -1220,8 +1231,35 @@ html[data-theme="rgb-pulse"] .display-heading {
 
 html[data-theme="rgb-pulse"] .display-heading em {
   background: var(--accent-gradient);
+  background-size: 180% 100%;
+  background-position: 0 50%;
   background-clip: text;
+  transition: background-position 480ms ease;
   -webkit-text-fill-color: transparent;
+}
+
+html[data-theme="rgb-pulse"] .display-heading:hover em {
+  background-position: 100% 50%;
+}
+
+html[data-theme="rgb-pulse"] .appearance-menu__icon {
+  background: conic-gradient(from 20deg, #70d9c6 0 27%, #879eff 27% 64%, #d89acb 64% 82%, #70d9c6 82% 100%);
+}
+
+html[data-theme="rgb-pulse"] .appearance-menu[open] > summary .appearance-menu__icon {
+  transform: rotate(24deg);
+}
+
+html[data-theme="rgb-pulse"] .brand-mark {
+  background-size: 140% 140%;
+  background-position: 0 50%;
+  transition: background-position 420ms ease, transform 180ms ease;
+}
+
+html[data-theme="rgb-pulse"] .brand:hover .brand-mark,
+html[data-theme="rgb-pulse"] .brand:focus-visible .brand-mark {
+  background-position: 100% 50%;
+  transform: rotate(5deg);
 }
 
 @media (min-width: 620px) {

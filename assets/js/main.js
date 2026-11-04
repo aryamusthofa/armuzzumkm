@@ -15,6 +15,7 @@
   let activeProjectFilter = "all";
   let activeServiceFilter = "all";
   let projectDialog;
+  let projectDialogTrigger;
 
   function getSavedLanguage() {
     try {
@@ -367,9 +368,27 @@
     projectDialog = byId("project-dialog");
     if (!projectDialog) return;
     projectDialog.addEventListener("click", (event) => {
-      if (event.target === projectDialog) projectDialog.close();
+      if (event.target === projectDialog) closeProjectDialog();
     });
-    projectDialog.querySelector("[data-dialog-close]")?.addEventListener("click", () => projectDialog.close());
+    projectDialog.addEventListener("cancel", (event) => {
+      event.preventDefault();
+      closeProjectDialog();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && projectDialog.open) {
+        event.preventDefault();
+        closeProjectDialog();
+      }
+    });
+    projectDialog.querySelector("[data-dialog-close]")?.addEventListener("click", closeProjectDialog);
+  }
+
+  function closeProjectDialog() {
+    if (!projectDialog?.open) return;
+    projectDialog.close();
+    projectDialogTrigger?.setAttribute("aria-expanded", "false");
+    projectDialogTrigger?.focus({ preventScroll: true });
+    projectDialogTrigger = null;
   }
 
   function renderDialogProject(project) {
@@ -414,6 +433,7 @@
     const project = getProject(id);
     if (!project || !projectDialog) return;
     document.querySelectorAll("[data-project-detail]").forEach((button) => button.setAttribute("aria-expanded", "false"));
+    projectDialogTrigger = trigger;
     trigger?.setAttribute("aria-expanded", "true");
     renderDialogProject(project);
     if (typeof projectDialog.showModal === "function") projectDialog.showModal();
