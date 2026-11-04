@@ -274,7 +274,7 @@ textarea {
   flex: 0 0 auto;
 }
 
-.appearance-menu > summary {
+.appearance-menu>summary {
   display: inline-flex;
   min-height: 44px;
   align-items: center;
@@ -291,12 +291,12 @@ textarea {
   list-style: none;
 }
 
-.appearance-menu > summary::-webkit-details-marker {
+.appearance-menu>summary::-webkit-details-marker {
   display: none;
 }
 
-.appearance-menu > summary:hover,
-.appearance-menu[open] > summary {
+.appearance-menu>summary:hover,
+.appearance-menu[open]>summary {
   border-color: var(--accent);
 }
 
@@ -593,10 +593,10 @@ h3 {
   font-size: 1.1rem;
 }
 
-.service-card > p:not(.eyebrow),
-.principle-card > p,
-.step-card > p,
-.package-card > p {
+.service-card>p:not(.eyebrow),
+.principle-card>p,
+.step-card>p,
+.package-card>p {
   color: var(--muted);
   font-size: 0.93rem;
 }
@@ -1246,7 +1246,7 @@ html[data-theme="rgb-pulse"] .appearance-menu__icon {
   background: conic-gradient(from 20deg, #70d9c6 0 27%, #879eff 27% 64%, #d89acb 64% 82%, #70d9c6 82% 100%);
 }
 
-html[data-theme="rgb-pulse"] .appearance-menu[open] > summary .appearance-menu__icon {
+html[data-theme="rgb-pulse"] .appearance-menu[open]>summary .appearance-menu__icon {
   transform: rotate(24deg);
 }
 
@@ -1263,6 +1263,7 @@ html[data-theme="rgb-pulse"] .brand:focus-visible .brand-mark {
 }
 
 @media (min-width: 620px) {
+
   .service-grid,
   .principle-grid,
   .step-grid,
@@ -1280,7 +1281,7 @@ html[data-theme="rgb-pulse"] .brand:focus-visible .brand-mark {
 }
 
 @media (min-width: 1080px) {
-  .site-nav > details > summary {
+  .site-nav>details>summary {
     display: none;
   }
 
@@ -1347,6 +1348,7 @@ html[data-theme="rgb-pulse"] .brand:focus-visible .brand-mark {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -1446,9 +1448,9 @@ html[data-theme="rgb-pulse"] .brand:focus-visible .brand-mark {
   width: 46px;
   height: 46px;
   place-items: center;
-  border: 1px solid rgba(255,255,255,.5);
+  border: 1px solid rgba(255, 255, 255, .5);
   border-radius: 50%;
-  background: rgba(17,22,21,.78);
+  background: rgba(17, 22, 21, .78);
   color: #fff;
 }
 
@@ -1469,7 +1471,7 @@ html[data-theme="rgb-pulse"] .brand:focus-visible .brand-mark {
   line-height: 1.2;
 }
 
-.project-card__copy > span:last-child {
+.project-card__copy>span:last-child {
   color: var(--muted);
   font-size: 0.92rem;
 }
@@ -1648,12 +1650,12 @@ html[data-theme="rgb-pulse"] .brand:focus-visible .brand-mark {
     padding-inline: 0.35rem;
   }
 
-  .appearance-menu > summary {
+  .appearance-menu>summary {
     min-width: 44px;
     padding-inline: 0.5rem;
   }
 
-  .site-nav > details > summary {
+  .site-nav>details>summary {
     min-width: 44px;
   }
 }
