@@ -1,7 +1,7 @@
 window.SITE_CONFIG = {
   businessName: {
-    en: "Photo + Video Studio",
-    id: "Studio Foto + Video"
+    en: "Armuzz Studio",
+    id: "Armuzz Studio"
   },
   ownerName: "Arya Musthofa Roja",
   ownerRole: {

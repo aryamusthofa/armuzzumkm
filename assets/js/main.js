@@ -9,7 +9,7 @@
 
   const supportedLanguages = ["en", "id"];
   const pageKey = document.body.dataset.page || "home";
-  const storageKeys = { language: "studio-language", theme: "studio-theme" };
+  const storageKeys = { language: "studio-language" };
   const byId = (id) => document.getElementById(id);
   let language = getSavedLanguage();
   let activeProjectFilter = "all";
@@ -451,29 +451,6 @@
     });
   }
 
-  function setupTheme() {
-    let theme = "terang";
-    try {
-      theme = localStorage.getItem(storageKeys.theme) || "terang";
-    } catch (error) {
-      console.warn("Theme preference could not be read from browser storage.", error);
-    }
-    setTheme(theme);
-    document.querySelectorAll("[data-theme-choice]").forEach((button) => {
-      button.addEventListener("click", () => setTheme(button.dataset.themeChoice));
-    });
-  }
-
-  function setTheme(theme) {
-    const themes = ["terang", "hangat", "gelap"];
-    if (!themes.includes(theme)) return;
-    document.documentElement.dataset.theme = theme;
-    document.querySelectorAll("[data-theme-choice]").forEach((button) => {
-      button.setAttribute("aria-pressed", String(button.dataset.themeChoice === theme));
-    });
-    savePreference(storageKeys.theme, theme);
-  }
-
   function setupContactForm() {
     const form = byId("inquiry-form");
     if (!form) return;
@@ -530,7 +507,6 @@
   function init() {
     ensureProjectDialog();
     setupFilters();
-    setupTheme();
     setupContactForm();
     setupMobileMenu();
     applyLanguage();

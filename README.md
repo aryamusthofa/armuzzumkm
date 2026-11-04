@@ -1,60 +1,73 @@
-# Product & video editing studio website
+# Situs Armuzz Studio
 
-A static, nine-page site centered on product and service showcases: photo/video editing services, illustrative project concepts, editable IDR/SGD sample estimates, FAQs, and a WhatsApp-ready project brief. English is the default language; visitors can switch between English and Bahasa Indonesia. Their selection is saved in browser storage.
+Situs statis sembilan halaman untuk layanan editing foto dan video. Pengunjung dapat melihat jasa, contoh konsep visual, estimasi paket, proses kerja, FAQ, profil editor, dan menyiapkan brief kontak. Bahasa Inggris dan Bahasa Indonesia tersedia; pilihan bahasa dan tema disimpan secara terpisah.
 
-## Pages
+## Halaman
 
-| Page | Purpose |
+| Berkas | Isi |
 | --- | --- |
-| `index.html` | Product-led introduction, featured project concepts, services, and estimates |
-| `layanan.html` | Photo and video editing services with sample estimate ranges |
-| `portfolio.html` | Filterable project concepts and image/video detail dialog |
-| `paket.html` | IDR and SGD estimate examples, clearly marked as editable samples |
-| `proses.html` | Steps from project brief to delivery |
-| `tentang.html` | Product-first editing approach and working principles |
-| `biodata.html` | Secondary editor profile and profile links |
-| `faq.html` | Answers about assets, revisions, prices, and output formats |
-| `kontak.html` | Brief form that prepares a WhatsApp message when configured |
+| `index.html` | Beranda, contoh konsep, jasa pilihan, paket, dan alur kerja |
+| `layanan.html` | Katalog jasa foto dan video |
+| `portfolio.html` | Galeri konsep dengan filter dan dialog detail |
+| `paket.html` | Contoh paket dan estimasi yang dapat diedit |
+| `proses.html` | Tahapan brief hingga penyerahan hasil |
+| `tentang.html` | Pendekatan dan prinsip kerja |
+| `biodata.html` | Profil editor dan tautan publik |
+| `faq.html` | Jawaban tentang brief, estimasi, revisi, dan hasil |
+| `kontak.html` | Form brief yang menyiapkan pesan WhatsApp/email bila dikonfigurasi |
 
-All pages use normal HTML links. Shared CSS and JavaScript live under `assets/`.
+Semua halaman memakai navigasi HTML biasa serta CSS dan JavaScript bersama di dalam `assets/`.
 
-## Customize the site
+## Empat tema
 
-Edit `assets/js/site-config.js`:
+Pemilih **Theme/Tema** tersedia pada navigasi setiap halaman. Buka pemilih, lalu pilih salah satu tampilan:
 
-- `businessName`: set the studio/business name; leave empty to use a generic studio label.
-- `ownerName`, `ownerRole`, and `ownerBio`: editor profile details.
-- `ownerImage`: profile photo path.
-- `businessDescription`: short description of the service.
-- `contact.whatsappNumber`: international WhatsApp number, digits only with country code (for example `62812...`).
-- `contact.email`: active email address, or empty.
-- `socialLinks`: only add active, approved profile URLs. Empty URLs are hidden.
-- `services`: bilingual service name, category, summary, and deliverable. The contact form options are generated from this list.
-- `portfolio`: three bilingual concept placeholders are included, each with a matching SVG in `assets/images/projects/`. They are clearly marked as concepts—not completed client projects. Replace the title, category, description, image, alt text, and optional `video` path with approved project media. Leave `video` empty to show the image fallback. The dialog currently expects MP4 video.
-- `pricing`: example price ranges in IDR and SGD. These are illustrative placeholders, not approved rates. Replace them with verified prices or remove entries before publishing.
-- `faqs`: bilingual answers. Update the fallback questions in `faq.html` if JavaScript is disabled.
+| Tema | Karakter |
+| --- | --- |
+| **Warm Paper** | Identitas awal: hangat, editorial, dan terinspirasi kertas |
+| **Deep Dark** | Grafit berlapis dengan aksen hangat yang tenang |
+| **Clean Light** | Terang, sederhana, dan mudah dipindai |
+| **RGB Pulse** | Permukaan gelap dengan aksen gradasi RGB yang selektif |
 
-Data that is localized uses `{ en: "...", id: "..." }`. Static page copy translations live in `assets/js/main.js`; update both language versions when changing that copy. A fresh browser defaults to English.
+Tema pertama kali adalah **Warm Paper**. Tema yang dipilih disimpan pada `localStorage` dengan kunci `studio-theme`; pilihan bahasa memakai kunci terpisah, `studio-language`. Tema awal diterapkan oleh `assets/js/theme.js` sebelum stylesheet dimuat untuk mengurangi kilatan tampilan yang salah. Nilai tema lama (`warm`, `dark`, `light`, `rgb`) tetap dikenali; nilai yang tidak dikenal kembali ke Warm Paper. Jika penyimpanan browser tidak tersedia, situs tetap dapat digunakan dengan tema bawaan.
 
-## Replace sample artwork
+Untuk mengubah palet, edit token CSS di bagian `:root` (Warm Paper) dan aturan `html[data-theme="..."]` pada `assets/css/style.css`. Komponen memakai token seperti `--page`, `--page-raised`, `--surface`, `--ink`, `--muted`, `--line`, `--accent`, dan `--accent-hover`. Pertahankan teks, fokus, dan tombol dengan kontras yang memadai. Jangan gunakan gradasi sebagai token warna teks atau latar tombol; `--accent-gradient` hanya untuk detail aksen RGB.
 
-Put the profile image in `assets/images/profile/` and update `ownerImage`. Replace each concept illustration in `assets/images/projects/` with project artwork or update its configured path. Only publish media you own or have permission to use. Add a video file path to that project's `video` field to enable playback in its project dialog.
+## Menyesuaikan konten
 
-## Run locally
+Edit `assets/js/site-config.js` untuk mengubah:
 
-Open the folder in VS Code and use Live Server, or run this command from the project directory if Python is installed:
+- Nama studio, nama pemilik, peran, bio, dan foto profil.
+- Nomor WhatsApp dan email. Nomor WhatsApp harus berisi digit dengan kode negara; email dan tautan sosial harus benar-benar aktif sebelum situs diterbitkan.
+- Jasa, kategori, deskripsi, keluaran, cakupan, dan waktu yang disepakati.
+- Data portofolio dan FAQ.
+- Paket serta harga contoh dalam IDR dan mata uang lain yang disetel secara terpisah. Angka contoh bukan tarif resmi; minta persetujuan pemilik sebelum dipublikasikan.
 
-```bash
+Konten terjemahan statis bahasa Inggris/Indonesia berada di `assets/js/translations.js`. Saat menambahkan teks antarmuka, tambahkan kedua bahasanya. Nama dan deskripsi data yang dilokalkan menggunakan objek `{ en: "...", id: "..." }`.
+
+Untuk mengganti gambar profil, letakkan aset yang boleh digunakan di `assets/images/profile/` dan perbarui `ownerImage`. Gambar konsep berada di `assets/images/projects/`; ganti aset dan perbarui jalurnya pada data `portfolio`. Video opsional memakai MP4. Karya yang tersedia saat ini adalah ilustrasi konsep, bukan proyek klien.
+
+## Menjalankan secara lokal
+
+Tidak diperlukan instalasi paket atau proses build. Dari folder proyek, jalankan:
+
+```powershell
 python -m http.server 5500
 ```
 
-Then open `http://localhost:5500`. No npm packages or build step are needed.
+Buka `http://localhost:5500` di browser. Alternatifnya, buka folder melalui VS Code dan gunakan ekstensi Live Server.
 
-## Static-site limitations
+## Pemeriksaan tema dan aksesibilitas
 
-- The contact form does not store or send data to a server. With a valid WhatsApp number configured, it opens a prefilled message for the visitor to review and send. Otherwise, the page explains that WhatsApp is not configured.
-- The site has no cart, payment flow, persistent ordering, dashboard, login, or content management.
-- The displayed projects and price ranges are examples; replace them before presenting the site as an established portfolio or official price list.
-- WhatsApp, email, official business address, operating hours, payment policy, and revision terms have not been provided.
-- `referension/` contains reference and learning materials, not site assets. Keep it out of the published site.
+1. Hapus nilai `studio-theme` dari penyimpanan situs untuk mencoba kunjungan pertama; Warm Paper seharusnya terpilih.
+2. Pilih setiap tema dan periksa beranda, jasa, portofolio/dialog, paket, form, FAQ, dan profil.
+3. Buka halaman lain dan muat ulang untuk memastikan tema tetap terpilih.
+4. Ganti bahasa setelah memilih tema; bahasa dan tema seharusnya tidak saling mengubah.
+5. Uji pemilih dengan keyboard, sentuhan, zoom, dan pengaturan `prefers-reduced-motion`.
+6. Gunakan mode perangkat browser pada lebar ponsel kecil dan pastikan tidak ada gulir horizontal.
 
+Transisi memakai CSS singkat dan tidak menjalankan animasi latar terus-menerus. Preferensi pengurangan gerakan dihormati. Situs menggunakan pengguliran browser normal; kelancaran dan frekuensi gambar aktual bergantung pada perangkat, browser, refresh layar, dan kondisi sistem. Proyek ini tidak menjanjikan 90 atau 120 FPS.
+
+## Publikasi dan batasan
+
+Folder ini dapat diterbitkan pada GitHub Pages atau host statis lain dengan mempertahankan struktur berkas dan jalur relatifnya. Sebelum tayang, konfirmasikan nama bisnis, tarif, kanal kontak, tautan sosial, materi portofolio, serta kebijakan waktu dan revisi. Form statis tidak menyimpan atau mengirim data ke server; pelanggan meninjau lalu mengirim pesan melalui aplikasi WhatsApp/email yang dikonfigurasi. Sistem pembayaran, penyimpanan order, dan pengelolaan konten memerlukan layanan/backend terpisah.
