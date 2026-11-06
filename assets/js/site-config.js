@@ -5,25 +5,30 @@ window.SITE_CONFIG = {
   },
   ownerName: "Arya Musthofa Roja",
   ownerRole: {
-    en: "Photo & video editor",
-    id: "Editor foto & video"
+    en: "Digital media editor",
+    id: "Editor media digital"
   },
   ownerBio: {
-    en: "Independent editing for product brands, creators, and everyday stories.",
-    id: "Layanan editing untuk brand produk, kreator, dan cerita sehari-hari."
+    en: "Independent digital-media editing for creator content, school projects, event documentation, and visual stories.",
+    id: "Layanan editing media digital untuk konten kreator, tugas sekolah, dokumentasi acara, dan cerita visual."
   },
   ownerImage: "./assets/images/profile/arya-profile.png",
   businessDescription: {
-    en: "Product-focused photo and video editing for social content, campaigns, and brand stories.",
-    id: "Editing foto dan video berfokus pada produk untuk konten sosial, kampanye, dan cerita brand."
+    en: "Photo, video, and motion edits for digital-art projects, creator content, school assignments, and event documentation.",
+    id: "Editing foto, video, dan motion untuk karya seni digital, konten kreator, tugas sekolah, dan dokumentasi acara."
   },
   contact: {
     whatsappNumber: "",
     email: ""
   },
+  orderChannels: [
+    { type: "whatsapp", label: "WhatsApp", value: "0000000000000" },
+    { type: "instagram", label: "Instagram DM", value: "arya_musthofa_roja01" },
+    { type: "tiktok", label: "TikTok DM", value: "" },
+    { type: "email", label: "Email", value: "" }
+  ],
   socialLinks: [
     { label: "Instagram", url: "https://instagram.com/arya_musthofa_roja01" },
-    { label: "GitHub", url: "https://github.com/aryamusthofa" },
     { label: "TikTok", url: "" },
     { label: "YouTube", url: "" },
     { label: "Facebook", url: "" }
@@ -34,19 +39,46 @@ window.SITE_CONFIG = {
       category: "video",
       name: { en: "Reels & TikTok edit", id: "Editing Reels & TikTok" },
       summary: {
-        en: "A focused vertical edit for social posts, product drops, or weekly content.",
-        id: "Editing vertikal untuk konten sosial, peluncuran produk, atau unggahan rutin."
+        en: "A focused vertical edit for creator posts, school assignments, event highlights, or digital-art projects.",
+        id: "Editing vertikal untuk konten kreator, tugas sekolah, sorotan acara, atau karya seni digital."
       },
       suitableFor: {
-        en: "Creators and small brands sharing short-form content.",
-        id: "Kreator dan usaha kecil yang membuat konten video pendek."
+        en: "Creators, students, event organizers, and digital-art projects with supplied footage.",
+        id: "Kreator, pelajar, penyelenggara acara, dan proyek seni digital dengan footage tersedia."
       },
       included: {
         en: ["Footage selection and cutting", "Pacing and music sync", "Basic color polish", "Vertical export, format agreed"],
         id: ["Pemilihan dan pemotongan footage", "Pengaturan tempo dan sinkronisasi musik", "Perapian warna dasar", "Ekspor vertikal, format disepakati"]
       },
-      delivery: { en: "Timing agreed per project", id: "Waktu disepakati per proyek" },
-      revisions: { en: "Revision scope agreed before editing", id: "Lingkup revisi disepakati sebelum editing" }
+      delivery: { en: "1–2 working days", id: "1–2 hari kerja" },
+      revisions: { en: "2 free revision rounds", id: "2x revisi gratis" },
+      bring: {
+        en: "Raw footage, music or reference if any, target platform",
+        id: "Footage mentah, musik/referensi bila ada, platform tujuan"
+      }
+    },
+    {
+      id: "video-alight-motion",
+      category: "video",
+      name: { en: "Alight Motion beat-sync edit", id: "Editing jedag-jedug Alight Motion" },
+      summary: {
+        en: "A beat-synced motion edit using supplied clips, music, and style references.",
+        id: "Editing motion mengikuti beat menggunakan klip, musik, dan referensi gaya yang disediakan."
+      },
+      suitableFor: {
+        en: "Digital-art edits, creator posts, school projects, and event highlights.",
+        id: "Karya seni digital, konten kreator, tugas sekolah, dan sorotan acara."
+      },
+      included: {
+        en: ["Beat-synced cuts and transitions", "Motion effects based on the agreed reference", "Music supplied or confirmed as licensed", "Format and duration agreed before editing"],
+        id: ["Potongan dan transisi mengikuti beat", "Efek motion berdasarkan referensi yang disepakati", "Musik disediakan atau dipastikan berlisensi", "Format dan durasi disepakati sebelum editing"]
+      },
+      delivery: { en: "Confirmed per project", id: "Dikonfirmasi per proyek" },
+      revisions: { en: "Agreed per project", id: "Disepakati per proyek" },
+      bring: {
+        en: "Clips, music/audio, aspect ratio, and a style reference",
+        id: "Klip, musik/audio, rasio video, dan referensi gaya"
+      }
     },
     {
       id: "video-youtube",
@@ -64,8 +96,12 @@ window.SITE_CONFIG = {
         en: ["Footage assembly and cuts", "Basic audio and color balance", "Titles or simple text when supplied", "Landscape export, format agreed"],
         id: ["Penyusunan dan pemotongan footage", "Perapian dasar audio dan warna", "Judul atau teks sederhana bila tersedia", "Ekspor lanskap, format disepakati"]
       },
-      delivery: { en: "Timing agreed per project", id: "Waktu disepakati per proyek" },
-      revisions: { en: "Revision scope agreed before editing", id: "Lingkup revisi disepakati sebelum editing" }
+      delivery: { en: "3–4 working days", id: "3–4 hari kerja" },
+      revisions: { en: "2 free revision rounds", id: "2x revisi gratis" },
+      bring: {
+        en: "Raw footage, outline or script if any, graphic assets",
+        id: "Footage mentah, outline/naskah bila ada, aset grafis"
+      }
     },
     {
       id: "video-promosi",
@@ -83,8 +119,12 @@ window.SITE_CONFIG = {
         en: ["Story-led shot selection", "Pacing, music, and simple text", "Basic color polish", "Output dimensions agreed for the platform"],
         id: ["Pemilihan shot berdasarkan alur cerita", "Pengaturan tempo, musik, dan teks sederhana", "Perapian warna dasar", "Ukuran hasil disepakati sesuai platform"]
       },
-      delivery: { en: "Timing agreed per project", id: "Waktu disepakati per proyek" },
-      revisions: { en: "Revision scope agreed before editing", id: "Lingkup revisi disepakati sebelum editing" }
+      delivery: { en: "2–3 working days", id: "2–3 hari kerja" },
+      revisions: { en: "2 free revision rounds", id: "2x revisi gratis" },
+      bring: {
+        en: "Product clips, logo/brand assets, key selling points",
+        id: "Klip produk, logo/brand assets, poin keunggulan produk"
+      }
     },
     {
       id: "video-sinematik",
@@ -102,8 +142,12 @@ window.SITE_CONFIG = {
         en: ["Footage selection and sequence", "Pacing and color direction", "Music placement from supplied/licensed assets", "Final length and format agreed"],
         id: ["Pemilihan dan susunan footage", "Pengaturan tempo dan arah warna", "Penempatan musik dari aset yang tersedia/berlisensi", "Durasi dan format akhir disepakati"]
       },
-      delivery: { en: "Timing agreed per project", id: "Waktu disepakati per proyek" },
-      revisions: { en: "Revision scope agreed before editing", id: "Lingkup revisi disepakati sebelum editing" }
+      delivery: { en: "3–5 working days", id: "3–5 hari kerja" },
+      revisions: { en: "2 free revision rounds", id: "2x revisi gratis" },
+      bring: {
+        en: "Full-resolution footage, mood/color/music references",
+        id: "Footage resolusi penuh, referensi mood/warna/musik"
+      }
     },
     {
       id: "video-acara",
@@ -121,8 +165,12 @@ window.SITE_CONFIG = {
         en: ["Moment selection and sequence", "Basic audio and color balancing", "Titles or event details when supplied", "Output format agreed"],
         id: ["Pemilihan dan susunan momen", "Perapian dasar audio dan warna", "Judul atau detail acara bila tersedia", "Format hasil disepakati"]
       },
-      delivery: { en: "Timing agreed per project", id: "Waktu disepakati per proyek" },
-      revisions: { en: "Revision scope agreed before editing", id: "Lingkup revisi disepakati sebelum editing" }
+      delivery: { en: "3–5 working days", id: "3–5 hari kerja" },
+      revisions: { en: "2 free revision rounds", id: "2x revisi gratis" },
+      bring: {
+        en: "All event recordings, rundown or key moments list",
+        id: "Seluruh rekaman acara, urutan rundown/momen utama"
+      }
     },
     {
       id: "foto-warna",
@@ -140,8 +188,12 @@ window.SITE_CONFIG = {
         en: ["Color and exposure adjustment", "Consistent look across the agreed set", "Delivery in agreed image format", "Image count confirmed before work"],
         id: ["Penyesuaian warna dan pencahayaan", "Tampilan konsisten untuk set yang disepakati", "Penyerahan dalam format gambar yang disepakati", "Jumlah foto dikonfirmasi sebelum pengerjaan"]
       },
-      delivery: { en: "Timing agreed per project", id: "Waktu disepakati per proyek" },
-      revisions: { en: "Revision scope agreed before editing", id: "Lingkup revisi disepakati sebelum editing" }
+      delivery: { en: "1 working day", id: "1 hari kerja" },
+      revisions: { en: "2 free revision rounds", id: "2x revisi gratis" },
+      bring: {
+        en: "Original high-res photos, preferred color tone reference",
+        id: "Foto resolusi asli, contoh tone warna yang disukai"
+      }
     },
     {
       id: "foto-retouch",
@@ -159,8 +211,12 @@ window.SITE_CONFIG = {
         en: ["Cleanup based on the brief", "Natural detail and texture handling", "Image count agreed upfront", "Export in the requested format"],
         id: ["Perapian sesuai brief", "Penanganan detail dan tekstur natural", "Jumlah foto disepakati sejak awal", "Ekspor dalam format yang diminta"]
       },
-      delivery: { en: "Timing agreed per project", id: "Waktu disepakati per proyek" },
-      revisions: { en: "Revision scope agreed before editing", id: "Lingkup revisi disepakati sebelum editing" }
+      delivery: { en: "1–2 working days", id: "1–2 hari kerja" },
+      revisions: { en: "2 free revision rounds", id: "2x revisi gratis" },
+      bring: {
+        en: "High-res photos, notes on specific areas to retouch",
+        id: "Foto resolusi tinggi, catatan area yang ingin diperhalus"
+      }
     },
     {
       id: "foto-manipulasi",
@@ -178,8 +234,12 @@ window.SITE_CONFIG = {
         en: ["Composition based on the agreed reference", "Light and color matching", "One agreed final canvas size", "Source asset review before confirmation"],
         id: ["Komposisi berdasarkan referensi yang disepakati", "Penyelarasan cahaya dan warna", "Satu ukuran kanvas akhir yang disepakati", "Pemeriksaan aset sumber sebelum konfirmasi"]
       },
-      delivery: { en: "Timing agreed per project", id: "Waktu disepakati per proyek" },
-      revisions: { en: "Revision scope agreed before editing", id: "Lingkup revisi disepakati sebelum editing" }
+      delivery: { en: "2–3 working days", id: "2–3 hari kerja" },
+      revisions: { en: "2 free revision rounds", id: "2x revisi gratis" },
+      bring: {
+        en: "Product and background photos, visual concept reference",
+        id: "Aset foto produk & latar, referensi konsep visual"
+      }
     },
     {
       id: "foto-latar",
@@ -197,8 +257,12 @@ window.SITE_CONFIG = {
         en: ["Background cutout", "Transparent or solid background as agreed", "Image count and file type confirmed", "One output size per brief"],
         id: ["Pemotongan latar", "Latar transparan atau warna solid sesuai kesepakatan", "Jumlah foto dan jenis file dikonfirmasi", "Satu ukuran hasil sesuai brief"]
       },
-      delivery: { en: "Timing agreed per project", id: "Waktu disepakati per proyek" },
-      revisions: { en: "Revision scope agreed before editing", id: "Lingkup revisi disepakati sebelum editing" }
+      delivery: { en: "1 working day", id: "1 hari kerja" },
+      revisions: { en: "1 free revision round", id: "1x revisi gratis" },
+      bring: {
+        en: "Product photos with clear edge lighting",
+        id: "Foto produk dengan pencahayaan jelas di tepi objek"
+      }
     },
     {
       id: "foto-feed",
@@ -216,26 +280,41 @@ window.SITE_CONFIG = {
         en: ["Visual direction based on supplied references", "Image selection and arrangement", "Export sizes agreed for the platform", "Captions are not included unless agreed"],
         id: ["Arah visual berdasarkan referensi yang diberikan", "Pemilihan dan penataan foto", "Ukuran ekspor disepakati sesuai platform", "Caption tidak termasuk kecuali disepakati"]
       },
-      delivery: { en: "Timing agreed per project", id: "Waktu disepakati per proyek" },
-      revisions: { en: "Revision scope agreed before editing", id: "Lingkup revisi disepakati sebelum editing" }
+      delivery: { en: "2–3 working days", id: "2–3 hari kerja" },
+      revisions: { en: "2 free revision rounds", id: "2x revisi gratis" },
+      bring: {
+        en: "Product photo set, brand style/colors, post sequence",
+        id: "Set foto produk, warna/gaya branding, urutan posting"
+      }
     }
   ],
   pricingIsSample: true,
   pricing: [
     {
+      serviceId: "video-alight-motion",
+      label: { en: "Alight Motion beat-sync edit", id: "Editing jedag-jedug Alight Motion" },
+      price: { en: "Quote after brief", id: "Penawaran setelah brief" },
+      customQuote: true,
+      unit: { en: "per project", id: "per proyek" },
+      includes: {
+        en: "The estimate depends on supplied footage, length, effects, and the agreed reference.",
+        id: "Estimasi mengikuti footage, durasi, efek, dan referensi yang disepakati."
+      }
+    },
+    {
       serviceId: "video-pendek",
       label: { en: "Reels & TikTok edit", id: "Editing Reels & TikTok" },
-      price: { en: "$15–35", id: "Rp150k–350k" },
-      unit: { en: "per short edit", id: "per video pendek" },
+      price: { en: "S$8–15", id: "Rp75k–150k" },
+      unit: { en: "per short video", id: "per video pendek" },
       includes: {
-        en: "One vertical cut using supplied footage; scope and final duration agreed first.",
+        en: "One vertical cut using supplied footage; scope and final duration agreed upfront.",
         id: "Satu video vertikal dari footage yang tersedia; lingkup dan durasi akhir disepakati."
       }
     },
     {
       serviceId: "video-promosi",
       label: { en: "Product promo video", id: "Video promosi produk" },
-      price: { en: "$25–70", id: "Rp250k–700k" },
+      price: { en: "S$15–35", id: "Rp150k–350k" },
       unit: { en: "per video", id: "per video" },
       includes: {
         en: "A short product-led edit with agreed text, music, and output format.",
@@ -245,17 +324,17 @@ window.SITE_CONFIG = {
     {
       serviceId: "video-youtube",
       label: { en: "YouTube video edit", id: "Editing video YouTube" },
-      price: { en: "$30–80", id: "Rp300k–800k" },
+      price: { en: "S$25–50", id: "Rp250k–500k" },
       unit: { en: "per video", id: "per video" },
       includes: {
-        en: "Estimate sample for a straightforward edit; length and graphics affect the final quote.",
-        id: "Contoh estimasi untuk editing sederhana; durasi dan grafis memengaruhi harga akhir."
+        en: "Starting estimate for straightforward long-form edits; length and graphics affect final quote.",
+        id: "Estimasi awal untuk editing berdurasi panjang; durasi dan grafis memengaruhi harga akhir."
       }
     },
     {
       serviceId: "foto-retouch",
       label: { en: "Portrait & product retouch", id: "Retouch potret & produk" },
-      price: { en: "$3–8", id: "Rp25k–75k" },
+      price: { en: "S$3–6", id: "Rp25k–50k" },
       unit: { en: "per image", id: "per foto" },
       includes: {
         en: "Basic cleanup per selected image; retouch complexity changes the estimate.",
@@ -265,10 +344,10 @@ window.SITE_CONFIG = {
     {
       serviceId: "foto-warna",
       label: { en: "Photo color & style", id: "Warna & gaya foto" },
-      price: { en: "$2–5", id: "Rp20k–50k" },
+      price: { en: "S$1–3", id: "Rp10k–25k" },
       unit: { en: "per image", id: "per foto" },
       includes: {
-        en: "Color and light adjustment per image; set size is confirmed first.",
+        en: "Color and light adjustment per image; set size confirmed upfront.",
         id: "Penyesuaian warna dan cahaya per foto; ukuran set dikonfirmasi terlebih dahulu."
       }
     },
@@ -290,13 +369,13 @@ window.SITE_CONFIG = {
       featured: true,
       name: { en: "Social cut", id: "Edit sosial" },
       summary: {
-        en: "A simple starting point for one vertical product or creator video.",
-        id: "Pilihan awal sederhana untuk satu video vertikal produk atau kreator."
+        en: "A starting scope for one vertical creator, school, or digital-art video.",
+        id: "Lingkup awal untuk satu video vertikal kreator, tugas sekolah, atau karya seni digital."
       },
       serviceId: "video-pendek",
-      price: { en: "$15–35", id: "Rp150k–350k" },
+      price: { en: "S$15–25", id: "Rp150k–250k" },
       includes: {
-        en: ["One short vertical edit", "Supplied footage", "Basic color and music sync", "Revisions and timing agreed first"],
+        en: ["One short vertical edit", "Supplied footage", "Basic color and music sync", "Revisions and turnaround agreed upfront"],
         id: ["Satu video vertikal pendek", "Menggunakan footage yang tersedia", "Perapian warna dasar dan sinkronisasi musik", "Revisi dan waktu disepakati sejak awal"]
       }
     },
@@ -305,13 +384,13 @@ window.SITE_CONFIG = {
       featured: true,
       name: { en: "Product spotlight", id: "Sorotan produk" },
       summary: {
-        en: "A concise promo cut to introduce a product or campaign.",
-        id: "Video promosi ringkas untuk memperkenalkan produk atau kampanye."
+        en: "A concise edit for a creator story, school presentation, or digital campaign.",
+        id: "Editing ringkas untuk cerita kreator, presentasi tugas, atau kampanye digital."
       },
       serviceId: "video-promosi",
-      price: { en: "$25–70", id: "Rp250k–700k" },
+      price: { en: "S$25–45", id: "Rp250k–450k" },
       includes: {
-        en: ["One product-led video", "Shot selection and pacing", "Agreed text and music direction", "Output format confirmed for the platform"],
+        en: ["One product-led promo video", "Shot selection and pacing", "Agreed text and music direction", "Output format confirmed for the platform"],
         id: ["Satu video berfokus produk", "Pemilihan shot dan pengaturan tempo", "Arah teks dan musik disepakati", "Format hasil dipastikan sesuai platform"]
       }
     },
@@ -320,11 +399,11 @@ window.SITE_CONFIG = {
       featured: true,
       name: { en: "Product image set", id: "Set foto produk" },
       summary: {
-        en: "A coordinated color finish for a small product photo set.",
-        id: "Penyelarasan warna untuk set foto produk sederhana."
+        en: "A coordinated color finish for a small photo or digital-art set.",
+        id: "Penyelarasan warna untuk set foto atau karya seni digital sederhana."
       },
       serviceId: "foto-warna",
-      price: { en: "$10–25", id: "Rp100k–250k" },
+      price: { en: "S$12–25", id: "Rp100k–200k" },
       includes: {
         en: ["Up to five supplied images as a sample scope", "Consistent color and light", "Export size agreed for use", "Final image count confirmed before work"],
         id: ["Maksimal lima foto yang tersedia sebagai contoh lingkup", "Warna dan cahaya yang konsisten", "Ukuran ekspor disepakati untuk penggunaan", "Jumlah foto final dikonfirmasi sebelum pengerjaan"]
@@ -476,45 +555,45 @@ window.SITE_CONFIG = {
       }
     },
     {
-      question: { en: "Are the prices official?", id: "Apakah harga yang ditampilkan resmi?" },
+      question: { en: "How are prices calculated?", id: "Bagaimana penentuan harga pengerjaan?" },
       answer: {
-        en: "No. Current amounts are editable demonstration estimates to show the price layout; they are not approved or binding rates. Confirm the final quote for each brief before work begins.",
-        id: "Belum. Angka saat ini adalah estimasi demonstrasi yang dapat diedit untuk menampilkan tata harga; bukan tarif resmi atau mengikat. Pastikan penawaran final untuk setiap brief sebelum pengerjaan."
+        en: "Listed prices are clear starting rates for standard edits. The final estimate follows your footage length, file count, and specific visual requirements agreed in your brief.",
+        id: "Harga yang tercantum adalah tarif mulai dari untuk pengerjaan standar. Estimasi final mengikuti durasi footage, jumlah file, dan kebutuhan visual yang disepakati dalam brief."
       }
     },
     {
-      question: { en: "How do USD and IDR prices work?", id: "Bagaimana harga USD dan IDR ditampilkan?" },
+      question: { en: "How do Singapore (S$) and Indonesian (Rp) prices work?", id: "Bagaimana harga S$ dan Rp ditampilkan?" },
       answer: {
-        en: "English pages show editable USD examples and Indonesian pages show editable IDR examples. These values are set independently; no exchange-rate conversion is applied.",
-        id: "Halaman Bahasa Indonesia menampilkan contoh IDR yang dapat diedit, sedangkan halaman English menampilkan contoh USD. Nilai ditetapkan secara terpisah dan tidak dihitung dengan kurs konversi."
+        en: "Indonesian pages show IDR (Rp) prices, and English pages show SGD (S$) rates. Both are set independently to suit clients in Indonesia and Singapore without fluctuating exchange conversions.",
+        id: "Halaman Bahasa Indonesia menampilkan tarif IDR (Rp), sedangkan halaman English menampilkan tarif SGD (S$). Keduanya diset secara independen sesuai pasar klien tanpa kurs konversi yang berubah-ubah."
       }
     },
     {
       question: { en: "How long does editing take?", id: "Berapa lama proses editing?" },
       answer: {
-        en: "Timing depends on source material, complexity, and current availability. A delivery date is agreed before editing starts; no fixed turnaround is promised here.",
-        id: "Waktu bergantung pada materi sumber, kompleksitas, dan ketersediaan. Tanggal penyerahan disepakati sebelum editing; tidak ada janji waktu tetap di sini."
+        en: "Times shown in the service listings are examples, not guaranteed deadlines. The actual delivery date is confirmed in writing after considering the project scope and queue.",
+        id: "Waktu pada daftar layanan hanya contoh, bukan tenggat yang dijamin. Tanggal pengiriman aktual dikonfirmasi tertulis setelah mempertimbangkan lingkup proyek dan antrean."
       }
     },
     {
       question: { en: "How are revisions handled?", id: "Bagaimana ketentuan revisi?" },
       answer: {
-        en: "The revision allowance and what it covers are agreed in the project brief before editing. The sample content does not promise unlimited revisions.",
-        id: "Jumlah revisi dan cakupannya disepakati dalam brief sebelum editing. Contoh konten ini tidak menjanjikan revisi tanpa batas."
+        en: "Revision counts shown in service listings are examples, not confirmed inclusions. The number of rounds and what each round covers are agreed in the project scope before work starts.",
+        id: "Jumlah revisi pada daftar layanan hanya contoh, bukan jatah yang sudah dipastikan. Jumlah putaran dan cakupan tiap putaran disepakati dalam lingkup proyek sebelum pengerjaan."
       }
     },
     {
       question: { en: "What formats can I receive?", id: "Format hasil apa yang bisa diterima?" },
       answer: {
-        en: "We agree on file type, dimensions, and platform before work begins. Share where the content will be used so the export can be specified.",
-        id: "Jenis file, ukuran, dan platform disepakati sebelum pengerjaan. Jelaskan tempat konten akan digunakan agar format ekspor bisa ditentukan."
+        en: "Deliverables are exported in formats suited to your target channel: 9:16 vertical MP4 for Reels/TikTok, 16:9 for YouTube, and high-resolution JPEG/PNG/WebP for photos.",
+        id: "Hasil ekspor disesuaikan dengan saluran tujuan Anda: MP4 vertikal 9:16 untuk Reels/TikTok, 16:9 untuk YouTube, serta JPEG/PNG/WebP resolusi penuh untuk foto."
       }
     },
     {
-      question: { en: "Can I place an order without WhatsApp?", id: "Bisakah memesan tanpa WhatsApp?" },
+      question: { en: "How do I place an order?", id: "Bagaimana cara melakukan pemesanan?" },
       answer: {
-        en: "This static site does not store orders. If WhatsApp or email is not configured, the site will show a setup notice; add a real business contact in the configuration before publishing.",
-        id: "Situs statis ini tidak menyimpan pesanan. Jika WhatsApp atau email belum diatur, situs menampilkan pemberitahuan; tambahkan kontak bisnis yang benar ke konfigurasi sebelum dipublikasikan."
+        en: "Choose your desired service or package, then send a brief through the Contact page using one of the contact methods currently configured there.",
+        id: "Pilih layanan atau paket yang diinginkan, lalu kirim brief melalui halaman Kontak menggunakan salah satu metode yang saat ini tersedia di sana."
       }
     }
   ]

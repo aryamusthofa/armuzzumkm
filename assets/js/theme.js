@@ -2,6 +2,8 @@
   "use strict";
 
   const storageKey = "studio-theme";
+  const effectsStorageKey = "studio-effects-enabled";
+  const rgbPulseStorageKey = "studio-rgb-pulse-enabled";
   const defaultTheme = "warm-paper";
   const themes = new Set(["warm-paper", "deep-dark", "clean-light", "rgb-pulse"]);
   const legacyThemes = {
@@ -18,6 +20,9 @@
   };
 
   let activeTheme = defaultTheme;
+  let effectsEnabled = false;
+  let rgbPulseEnabled = false;
+  const reducedMotionQuery = window.matchMedia?.("(prefers-reduced-motion: reduce)");
   try {
     const savedTheme = localStorage.getItem(storageKey);
     if (themes.has(savedTheme)) {
@@ -27,6 +32,31 @@
     }
   } catch (error) {
     console.warn("Theme preference could not be read from browser storage.", error);
+  }
+
+  try {
+    effectsEnabled = localStorage.getItem(effectsStorageKey) === "true";
+    rgbPulseEnabled = localStorage.getItem(rgbPulseStorageKey) === "true";
+  } catch (error) {
+    console.warn("Motion preferences could not be read from browser storage.", error);
+  }
+
+  function applyMotionPreferences() {
+    const reducedMotion = Boolean(reducedMotionQuery?.matches);
+    const reducedMotionNote = window.SITE_COPY?.[document.documentElement.lang]?.["theme.reducedMotionNote"] ||
+      "Disabled by reduced-motion preference";
+    document.documentElement.classList.toggle("effects-enabled", effectsEnabled && !reducedMotion);
+    document.documentElement.classList.toggle("rgb-pulse-enabled", rgbPulseEnabled && !reducedMotion);
+    document.querySelectorAll("[data-motion-choice]").forEach((toggle) => {
+      toggle.checked = effectsEnabled && !reducedMotion;
+      toggle.disabled = reducedMotion;
+      toggle.title = reducedMotion ? reducedMotionNote : "";
+    });
+    document.querySelectorAll("[data-rgb-pulse-choice]").forEach((toggle) => {
+      toggle.checked = rgbPulseEnabled && !reducedMotion;
+      toggle.disabled = reducedMotion;
+      toggle.title = reducedMotion ? reducedMotionNote : "";
+    });
   }
 
   function updateThemeControls() {
@@ -56,7 +86,27 @@
   }
 
   applyTheme(activeTheme);
-  document.addEventListener("DOMContentLoaded", updateThemeControls, { once: true });
+  document.addEventListener("DOMContentLoaded", () => {
+    updateThemeControls();
+    applyMotionPreferences();
+  }, { once: true });
+  reducedMotionQuery?.addEventListener?.("change", applyMotionPreferences);
+
+  document.addEventListener("change", (event) => {
+    const motionToggle = event.target.closest("[data-motion-choice]");
+    const rgbPulseToggle = event.target.closest("[data-rgb-pulse-choice]");
+    if ((!motionToggle && !rgbPulseToggle) || reducedMotionQuery?.matches) return;
+
+    const storage = motionToggle ? effectsStorageKey : rgbPulseStorageKey;
+    if (motionToggle) effectsEnabled = motionToggle.checked;
+    else rgbPulseEnabled = rgbPulseToggle.checked;
+    try {
+      localStorage.setItem(storage, String(motionToggle ? effectsEnabled : rgbPulseEnabled));
+    } catch (error) {
+      console.warn("Motion preference could not be saved in browser storage.", error);
+    }
+    applyMotionPreferences();
+  });
 
   document.addEventListener("click", (event) => {
     const button = event.target.closest("[data-theme-choice]");
