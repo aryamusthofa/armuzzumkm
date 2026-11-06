@@ -25,11 +25,14 @@
   let rgbPulseEnabled = false;
   let soundEffectsEnabled = false;
   let audioContext;
+  let ambientMusicBus;
   let ambientMusicStarting = false;
   let ambientMusicPlaying = false;
   let ambientMusicNodes = [];
   let ambientMusicTimer;
-  let ambientChordIndex = 0;
+  let ambientMusicStep = 0;
+  let nextAmbientMusicStepAt = 0;
+  let ambientNoiseBuffer;
   let lastSoundAt = 0;
   let revealObserver;
   const reducedMotionQuery = window.matchMedia?.("(prefers-reduced-motion: reduce)");
@@ -76,9 +79,9 @@
 
   function updateAmbientMusicControl() {
     const playLabel = window.SITE_COPY?.[document.documentElement.lang]?.["theme.musicPlay"] ||
-      "Play ambient music";
+      "Play lo-fi music";
     const pauseLabel = window.SITE_COPY?.[document.documentElement.lang]?.["theme.musicPause"] ||
-      "Pause ambient music";
+      "Pause lo-fi music";
     document.querySelectorAll("[data-music-toggle]").forEach((button) => {
       button.textContent = ambientMusicPlaying ? pauseLabel : playLabel;
       button.setAttribute("aria-label", button.textContent);
@@ -99,17 +102,150 @@
       updateAmbientMusicControl();
       return;
     }
-    const stopAt = audioContext.currentTime + 0.6;
-    nodes.forEach(({ oscillator, gain }) => {
-      gain.gain.cancelScheduledValues(audioContext.currentTime);
-      gain.gain.setTargetAtTime(0, audioContext.currentTime, 0.12);
-      oscillator.stop(stopAt);
-      oscillator.addEventListener("ended", () => {
-        oscillator.disconnect();
+    const now = audioContext.currentTime;
+    nodes.forEach(({ sources, gain, filter }) => {
+      gain.gain.cancelScheduledValues(now);
+      gain.gain.setTargetAtTime(0, now, 0.045);
+      sources.forEach((source) => {
+        try {
+          source.stop(now + 0.18);
+        } catch (error) {
+          if (error.name !== "InvalidStateError") {
+            console.warn("An ambient music voice could not be stopped.", error);
+          }
+        }
+      });
+      sources[0]?.addEventListener("ended", () => {
+        sources.forEach((source) => source.disconnect());
+        filter?.disconnect();
         gain.disconnect();
       }, { once: true });
     });
     updateAmbientMusicControl();
+  }
+
+  function midiFrequency(note) {
+    return 440 * 2 ** ((note - 69) / 12);
+  }
+
+  function trackAmbientMusicVoice(sources, gain, filter) {
+    const voice = { sources, gain, filter };
+    ambientMusicNodes.push(voice);
+    sources[0].addEventListener("ended", () => {
+      ambientMusicNodes = ambientMusicNodes.filter((item) => item !== voice);
+      sources.forEach((source) => source.disconnect());
+      filter?.disconnect();
+      gain.disconnect();
+    }, { once: true });
+  }
+
+  function playAmbientTone(frequency, startAt, duration, volume, filterFrequency = 1800) {
+    const fundamental = audioContext.createOscillator();
+    const overtone = audioContext.createOscillator();
+    const blend = audioContext.createGain();
+    const filter = audioContext.createBiquadFilter();
+    const envelope = audioContext.createGain();
+    fundamental.type = "triangle";
+    fundamental.frequency.setValueAtTime(frequency, startAt);
+    overtone.type = "sine";
+    overtone.frequency.setValueAtTime(frequency * 2, startAt);
+    blend.gain.setValueAtTime(0.18, startAt);
+    filter.type = "lowpass";
+    filter.frequency.setValueAtTime(filterFrequency, startAt);
+    filter.Q.setValueAtTime(0.7, startAt);
+    envelope.gain.setValueAtTime(0.0001, startAt);
+    envelope.gain.linearRampToValueAtTime(volume, startAt + 0.012);
+    envelope.gain.exponentialRampToValueAtTime(0.0001, startAt + duration);
+    fundamental.connect(filter);
+    overtone.connect(blend);
+    blend.connect(filter);
+    filter.connect(envelope);
+    envelope.connect(ambientMusicBus);
+    fundamental.start(startAt);
+    overtone.start(startAt);
+    fundamental.stop(startAt + duration + 0.02);
+    overtone.stop(startAt + duration + 0.02);
+    trackAmbientMusicVoice([fundamental, overtone], envelope, filter);
+  }
+
+  function playAmbientNoise(startAt, duration, volume, filterType, filterFrequency) {
+    const source = audioContext.createBufferSource();
+    const filter = audioContext.createBiquadFilter();
+    const envelope = audioContext.createGain();
+    source.buffer = ambientNoiseBuffer;
+    filter.type = filterType;
+    filter.frequency.setValueAtTime(filterFrequency, startAt);
+    envelope.gain.setValueAtTime(0.0001, startAt);
+    envelope.gain.linearRampToValueAtTime(volume, startAt + 0.004);
+    envelope.gain.exponentialRampToValueAtTime(0.0001, startAt + duration);
+    source.connect(filter);
+    filter.connect(envelope);
+    envelope.connect(ambientMusicBus);
+    source.start(startAt);
+    source.stop(startAt + duration + 0.02);
+    trackAmbientMusicVoice([source], envelope, filter);
+  }
+
+  function scheduleAmbientMusicStep(step, startAt) {
+    const beatsPerMinute = 78;
+    const beatLength = 60 / beatsPerMinute;
+    const sixteenthLength = beatLength / 4;
+    const stepInBar = step % 16;
+    const bar = Math.floor(step / 16) % 4;
+    const chords = [
+      { notes: [60, 64, 67, 71], bass: 36 },
+      { notes: [57, 60, 64, 67], bass: 33 },
+      { notes: [53, 57, 60, 64], bass: 29 },
+      { notes: [55, 59, 62, 65], bass: 31 }
+    ];
+    const chord = chords[bar];
+    const swungAt = startAt + (stepInBar % 4 === 2 ? sixteenthLength * 0.12 : 0);
+
+    if (stepInBar === 0 || stepInBar === 8) {
+      chord.notes.forEach((note, index) => {
+        playAmbientTone(midiFrequency(note), swungAt + index * 0.018, 0.95, 0.028, 1500);
+      });
+      playAmbientTone(midiFrequency(chord.bass), swungAt, 0.72, 0.075, 420);
+    } else if (stepInBar === 6 || stepInBar === 14) {
+      playAmbientTone(midiFrequency(chord.notes[2] + 12), swungAt, 0.38, 0.012, 2100);
+    }
+
+    if (stepInBar === 0 || stepInBar === 8 || stepInBar === 10) {
+      const kick = audioContext.createOscillator();
+      const envelope = audioContext.createGain();
+      kick.type = "sine";
+      kick.frequency.setValueAtTime(stepInBar === 10 ? 72 : 105, startAt);
+      kick.frequency.exponentialRampToValueAtTime(42, startAt + 0.11);
+      envelope.gain.setValueAtTime(0.16, startAt);
+      envelope.gain.exponentialRampToValueAtTime(0.0001, startAt + 0.16);
+      kick.connect(envelope);
+      envelope.connect(ambientMusicBus);
+      kick.start(startAt);
+      kick.stop(startAt + 0.18);
+      trackAmbientMusicVoice([kick], envelope);
+    }
+
+    if (stepInBar === 4 || stepInBar === 12) {
+      playAmbientNoise(startAt, 0.16, 0.035, "bandpass", 1900);
+    } else if (stepInBar % 4 === 2) {
+      playAmbientNoise(swungAt, 0.045, 0.009, "highpass", 7200);
+    }
+
+    const melodicNotes = [null, 76, null, 74, null, 71, null, 67, null, 69, null, 72, null, 71, null, 67];
+    const melody = melodicNotes[stepInBar];
+    if (melody && (bar === 0 || bar === 2)) {
+      playAmbientTone(midiFrequency(melody), swungAt, 0.32, 0.009, 2600);
+    }
+  }
+
+  function scheduleAmbientMusic() {
+    if (!ambientMusicPlaying || !audioContext) return;
+    const sixteenthLength = 60 / 78 / 4;
+    while (nextAmbientMusicStepAt < audioContext.currentTime + 0.12) {
+      scheduleAmbientMusicStep(ambientMusicStep, nextAmbientMusicStepAt);
+      ambientMusicStep += 1;
+      nextAmbientMusicStepAt += sixteenthLength;
+    }
   }
 
   async function startAmbientMusic() {
@@ -130,42 +266,26 @@
         return;
       }
 
-      const chords = [
-        [261.63, 329.63, 392.00],
-        [220.00, 261.63, 329.63],
-        [174.61, 220.00, 261.63],
-        [196.00, 246.94, 293.66]
-      ];
-      ambientChordIndex = 0;
       const now = audioContext.currentTime;
-      ambientMusicNodes = chords[0].map((frequency) => {
-        const oscillator = audioContext.createOscillator();
-        const gain = audioContext.createGain();
-        oscillator.type = "sine";
-        oscillator.frequency.setValueAtTime(frequency, now);
-        gain.gain.setValueAtTime(0, now);
-        gain.gain.linearRampToValueAtTime(0.035, now + 2.5);
-        oscillator.connect(gain);
-        gain.connect(audioContext.destination);
-        oscillator.start(now);
-        return { oscillator, gain };
-      });
+      ambientMusicBus ||= audioContext.createGain();
+      ambientMusicBus.gain.setValueAtTime(0.62, now);
+      ambientMusicBus.connect(audioContext.destination);
+      if (!ambientNoiseBuffer) {
+        ambientNoiseBuffer = audioContext.createBuffer(1, audioContext.sampleRate, audioContext.sampleRate);
+        const noise = ambientNoiseBuffer.getChannelData(0);
+        let value = 0;
+        for (let index = 0; index < noise.length; index += 1) {
+          value = (value + 0.025 * (Math.random() * 2 - 1)) / 1.025;
+          noise[index] = value * 3.5;
+        }
+      }
+      ambientMusicStep = 0;
+      nextAmbientMusicStepAt = now + 0.04;
       ambientMusicStarting = false;
       ambientMusicPlaying = true;
       updateAmbientMusicControl();
-      ambientMusicTimer = window.setInterval(() => {
-        if (document.hidden) {
-          stopAmbientMusic();
-          return;
-        }
-        ambientChordIndex = (ambientChordIndex + 1) % chords.length;
-        const chord = chords[ambientChordIndex];
-        const chordStart = audioContext.currentTime;
-        ambientMusicNodes.forEach(({ oscillator }, index) => {
-          oscillator.frequency.cancelScheduledValues(chordStart);
-          oscillator.frequency.setTargetAtTime(chord[index], chordStart, 1.8);
-        });
-      }, 8000);
+      scheduleAmbientMusic();
+      ambientMusicTimer = window.setInterval(scheduleAmbientMusic, 25);
     } catch (error) {
       stopAmbientMusic();
       console.warn("Ambient music could not be played.", error);

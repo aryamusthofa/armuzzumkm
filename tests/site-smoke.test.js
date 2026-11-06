@@ -132,8 +132,11 @@ test("profile examples, reduced-motion controls, and social links remain honest"
   assert.match(theme, /toggle\.checked = rgbPulseEnabled && !reducedMotion/);
   assert.match(read("assets/js/translations.js"), /"theme\.soundEffect": "UI sounds"/);
   assert.match(read("assets/js/translations.js"), /"theme\.soundEffect": "Suara antarmuka"/);
-  assert.match(read("assets/js/translations.js"), /"theme\.ambientMusic": "Background music"/);
-  assert.match(read("assets/js/translations.js"), /"theme\.ambientMusic": "Musik latar"/);
+  assert.match(read("assets/js/translations.js"), /"theme\.ambientMusic": "Lo-fi music"/);
+  assert.match(read("assets/js/translations.js"), /"theme\.ambientMusic": "Musik lo-fi"/);
+  assert.match(theme, /const beatsPerMinute = 78/);
+  assert.match(theme, /playAmbientNoise/);
+  assert.match(theme, /ambientMusicStep \+= 1/);
   assert.match(read("assets/js/main.js"), /data-music-group/);
   assert.match(read("assets/css/style.css"), /html\.effects-enabled \.motion-reveal/);
   assert.match(read("assets/css/style.css"), /html\.effects-enabled \.interaction-feedback/);
