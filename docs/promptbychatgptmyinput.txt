@@ -1,0 +1,400 @@
+ubah teks ini jadi prompt berbahasa inggris yang professional dan berkualitas, yang langsung dipahami ai agent nya dan bisa melakukannya dengan hasil yang maksimal, intinya sama persis sesuai dengan konteks yang ku inginkan, yang dimana ga terlalu ai banget, hasilnya natural dan organik yang disukai oleh sesama manusia, intinya memanusiakan manusia dengan sistem psikologis yang sangat efektif dan worth it tanpa adanya paksaan secara langsung, boleh generate myprompt.md nya sekalian setelah prompt nya dah matang dan tersedia, jobdesk konteks nya:\
+\
+saya ingin membuat web umkm yang simpel tapi sangat berfungsi untuk para penjual umkm, yang mudah diedit dan dikembangkan oleh diri saya sendiri sebagai developer, yang relate berkualitas professional tapi bisa dengan mudah ku pahami semuanya, saya butuh setidaknya 7-10 page yang simpel ga banyak basa basi, walau berkualitas tinggi dan gampang dikembangkan dan kelola, gw pengen yang gw buat ga gamang bikin males si client maupun pelanggan nya, dan ini dari beberapa referensi materinya:\
+https\://universal-magpie-c9c.notion.site/Web-101-Build-Your-Own-Link-in-Bio-3ef2eddec75280b9878bfc6368b08376\
+https\://universal-magpie-c9c.notion.site/Pertemuan-1-Cara-Kerja-Web-Tooling-HTML-3ef2eddec75280c5907ee46cadec5f34?pvs=25\
+https\://universal-magpie-c9c.notion.site/Pertemuan-2-Tailwind-Dari-Polos-Jadi-Cantik-3ef2eddec75280c5afdecbc970250bd7?pvs=25\
+https\://universal-magpie-c9c.notion.site/Pertemuan-3-JavaScript-DOM-3ef2eddec75280a381b6ec9dd1d6cfc9?pvs=25\
+https\://universal-magpie-c9c.notion.site/Pertemuan-4-Konsep-React-API-Deploy-3f02eddec752806c841ce4411d0801f5?pvs=25\
+https\://universal-magpie-c9c.notion.site/Sharing-Session-Bagaimana-Sebuah-Tim-Software-Developer-Bekerja-di-Industri-3f12eddec75280c58815dfa85dc43483?pvs=25\
+https\://universal-magpie-c9c.notion.site/Cheat-Sheet-3f12eddec7528045b072ce59fb8f8268?pvs=25\
+https\://aryamusthofa.github.io/bioprofile/\
+https\://armuzzdev.infinityfreeapp.com/\
+https\://renando.duingzcreative.site/#awards\
+https\://www\.duingzforge.site/learn/portfolio-sinematik-ai-copy-prompt\
+https\://duingzcreative.site/renando?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAaeF3OTkl1JqJGuGa-ZMk1qS19QHSdA9jnq0Rf3B5RZvIpe-CPUyVXPWLzm0JA_aem_vmlnqoeiKSOTJwtHc3-bMA\
+https\://fakhriamrullah1411-arch.github.io/webkulinerjapan/
+[https://github.com/Renando/testprto](https://github.com/Renando/testprto)
+[https://github.com/Renando/BEM-Stikes](https://github.com/Renando/BEM-Stikes)
+[https://github.com/Renando/portfolio3](https://github.com/Renando/portfolio3)
+[https://github.com/Renando/pww](https://github.com/Renando/pww)
+[https://github.com/aryamusthofa?page=1&tab=repositories](https://github.com/aryamusthofa?page=1\&tab=repositories)
+[https://github.com/fakhriamrullah1411-arch/webkulinerjapan](https://github.com/fakhriamrullah1411-arch/webkulinerjapan)\
+\
+Tema maupun Konteks UMKM ku untuk client:\
+\*Jasa editing foto dan video profesional siap buat kontenmu makin estetik, rapi, dan mencuri perhatian! 📸\* ✨\
+Bingung atur warna foto (color grading), potong klip video yang kaku, atau mau bikin visual produk yang 10uki high-end tapi enggak punya waktu? Biar tim kami yang kerjakan dari nol sampai siap upload.\
+\
+&#x20;\*Layanan Editing Foto & Video Kami:\* \
+\
+• Editing Video: Reels, TikTok, YouTube, Video Produk (IKLAN UMKM), Video Cinematic, dan Dokumentasi Acara.\
+• Editing Foto: Color grading / preset, retouching wajah/produk, manipulasi foto, hapus background, dan penyusunan feed Instagram.\
+\
+&#x20;\*Keunggulan Kami:\* \
+\
+• Hasil Estetik & Modern: Mengikuti tren visual terkini yang disukai audiens.\
+• Pengerjaan Cepat: On-time sesuai deadline yang disepakati.\
+• Fleksibel: Dapat jatah revisi agar hasilnya sesuai dengan branding atau seleramu.\
+\
+\
+saya ingin menambahkan biografi umkm penjual sebagai pemilik toko usahanya, aekalian sama bio link yang mengarahkan ke medsos penjual umkm tersebut, agar bisa saya serahkan web nya ke pemiliknya sebagai developer untuk umkm harus mengusahakan yang professional dan terbaik, tapi tetep gampang dipahami dikuasai bahkan dikembangkan oleh saya sendiri sebagai pembuat web nya\
+\
+langsung lengkapi aja itu web, anda selesaikan semuanya, dengan versi dump nya terlebih dahulu agar lebih mudah dan siap ku kembangkan dan kelola sendiri, nanti ku ubah yang perlu, tapi sekarang fokus sempurnakan dan lengkapi semuanya sampai matang, walau dimulai versi dump nya aja, selanjutnya bisa dikembangkan secara bertahap sampai semua selesai dengan sempurna\
+\
+lalu ada lagi, saya ingin membuat web khusus buat biodata saya sebagai pemilik umkm tersebut, referensi sudah tertera, web nya seperti yang arya musthofa itu, cuman nama diubah jadi sesuai tema dan konteks UMKM nya, dengan tema web dan posisinya style nya hampir sama seperti hal tersebut, intinya biodata nya sebagai umkm dimaksud yang sudah professional, ntah ig tiktok dll lengkap dah intinya\
+\
+untuk cara beralih page nya, pake pemanggilan page seperti ke biodata.html ketika di klik, otomatis cari file itu di dalam folder yang sama, sekaligus ada juga memainkan js nya juga, kalo ada python format .py yang bisa difungsikan silahkan juga, css juga ada yang dipisah kalau perlu, intinya terstruktur dan rapi mulus, buat se efisien mungkin dengan hasil yang berkualitas tinggi dan mudah dikembangkan dikelola diperbaiki disesuaikan dan lainnya, buat se nyaman mungkin aja, style gen z gitulah mesti yang ga bikin sakit mata dan ringan. \
+\
+Note: Buat Prompt Nya Dulu Aja, Pahami Sebelum Eksekusi, Ga Usah Banyak Mikir Basa Basi, Untuk Selain Prompt Nanti Kalau Ada Instruksi Tambahan, Intinya Sesuai Konteks Web search
+
+
+next prompt:
+
+sempurnakan prompt ini jadi sesuai yang ku inginkan, dengan hasil yang diatas ekspetasi ku, ai langsung paham dan kasih effort tinggi ke aku gitu, buat perkembangan usaha yang serius ini, dan ini prompt mentah dari gw nya yang di translate pake google ini:
+
+Conduct a thorough review and refine everything; I want this to be highly optimized for mobile devices. It should be comfortable and visually pleasing when opened on an Android phone, featuring a flawless UI/UX. The user flow must be smooth and simple—no clutter, no unnecessary loops, and absolutely free of bugs or any disruptive elements. Everything should be neat and well-structured. I want this to be a professional-grade platform for an MSME (micro, small, and medium enterprise)—nothing amateurish. It needs to be perfectly tailored for mobile devices (both Android and iOS) to make it as effortless as possible for customers to order the products or services offered. Incorporate interactive elements, showcase the products and services with accompanying images or videos, and perhaps add some unique sound effects. In short, this should be a complete, comprehensive package—this is a serious-level freelance business project.
+
+Now, take the entire project to a significantly higher professional standard.
+
+I want you to conduct a comprehensive review, refinement, optimization, and quality improvement of the entire website. Treat this as a serious commercial project for a real MSME business, not a portfolio experiment, a school assignment, or a generic AI-generated website.
+
+Your objective is to deliver an experience that feels professionally crafted, commercially valuable, genuinely human-centered, and exceptionally comfortable to use.
+
+Do not settle for something that merely looks attractive in a desktop preview. Every design decision, interaction, layout, and technical implementation must serve the actual needs of the business owner and its customers.
+
+## 1. Mobile-First Excellence
+
+Mobile devices are the highest priority.
+
+Optimize the entire platform primarily for Android smartphones, while ensuring excellent compatibility with iPhones, tablets, laptops, and desktop browsers.
+
+Pay particular attention to:
+- Natural layouts that adapt correctly to different screen sizes and orientations.
+- Comfortable spacing, readable typography, balanced visual hierarchy, and properly sized interactive elements.
+- Touch-friendly navigation, buttons, cards, menus, forms, and interactive components.
+- Consistent layouts without horizontal overflow, accidental clipping, overlapping elements, or awkward empty spaces.
+- Smooth scrolling and transitions without unnecessary rendering overhead.
+- Proper handling of browser interfaces, mobile safe areas, and different viewport dimensions.
+
+The experience should feel natural and effortless on an ordinary Android phone, including devices with modest hardware specifications.
+
+## 2. Professional UI/UX and Human-Centered Design
+
+Build an interface that looks intentional, sophisticated, modern, and genuinely appealing to real people.
+
+Avoid generic AI-generated aesthetics, excessive gradients, unnecessary glassmorphism, meaningless decorative elements, overused animations, and repetitive card layouts.
+
+Establish a coherent visual identity through carefully selected typography, colors, spacing, imagery, icons, component styles, and consistent design patterns.
+
+Every element must have a purpose.
+
+Apply human-centered design and ethical behavioral psychology:
+- Make important information easy to discover.
+- Reduce cognitive load and unnecessary decision-making.
+- Build confidence through clarity, transparency, and consistency.
+- Create natural engagement without aggressively demanding attention.
+- Use persuasive communication without manipulation, artificial urgency, misleading claims, or forced interactions.
+- Make customers feel comfortable, respected, and in control throughout their experience.
+
+The result should feel like a website thoughtfully designed by an experienced human designer who understands actual customer behavior.
+
+## 3. Customer Experience and Business Conversion
+
+The website must function as a practical business platform, not just an online presentation.
+
+Make it exceptionally easy for potential customers to understand the services, evaluate examples of previous work, explore available options, and contact the business.
+
+Prioritize a frictionless customer journey:
+
+Discover the business → Understand its services → Explore portfolio examples → Develop confidence → Choose a service → Contact the business → Discuss requirements → Proceed with an order.
+
+Integrate appropriate and functional interactions, including:
+- Direct WhatsApp contact and order inquiries.
+- Clear service categories and descriptions.
+- Attractive photo and video galleries.
+- Portfolio previews with useful project details.
+- Relevant social media connections.
+- Contact forms with proper validation and feedback, where applicable.
+- Clear calls to action positioned naturally throughout the website.
+
+Ensure that every interactive element has a meaningful purpose and leads to an understandable outcome.
+
+Do not introduce unnecessary checkout systems, payment gateways, authentication, databases, or complex features unless the existing project requirements genuinely justify them.
+
+## 4. Visual Content and Interactive Experience
+
+Make the presentation of photo and video editing services visually compelling.
+
+Use high-quality, relevant imagery and video previews to communicate the value of the services.
+
+Where appropriate, implement:
+- Interactive image galleries.
+- Before-and-after comparisons.
+- Video previews and embedded media.
+- Elegant project detail views.
+- Subtle hover and touch feedback.
+- Carefully designed micro-interactions.
+- Lightweight transitions and contextual animations.
+
+Visual content should support the business message instead of overwhelming it.
+
+Sound effects may be considered only when they genuinely improve the experience. Keep them subtle, optional, user-controlled, and disabled by default. Never autoplay audio or introduce distracting sounds.
+
+Do not use random stock imagery merely to fill empty spaces. Prioritize relevant business visuals and clearly identifiable editable placeholders when actual assets are unavailable.
+
+## 5. Performance, Stability, and Technical Quality
+
+Optimize the website for real-world usage, especially on mobile devices and inconsistent network connections.
+
+Review and improve:
+- Page loading performance.
+- Image and video optimization.
+- CSS and JavaScript efficiency.
+- Dependency usage.
+- DOM manipulation and event handling.
+- Navigation reliability.
+- Resource loading strategies.
+- Memory and rendering overhead.
+- Error handling and fallback behavior.
+
+Avoid unnecessary libraries, oversized assets, redundant code, excessive scripts, and technically impressive features that provide little practical value.
+
+Maintain clean, modular, readable, and maintainable code.
+
+Preserve the simplicity of the existing project architecture. Do not introduce unnecessary frameworks or backend infrastructure merely for the sake of using more advanced technology.
+
+## 6. Complete Functional and Cross-Page Consistency
+
+Inspect every page and every major interaction.
+
+Verify that:
+- All navigation links lead to the correct pages.
+- JavaScript functionality works independently and across pages.
+- Shared styling remains consistent.
+- Buttons and calls to action perform their intended actions.
+- Forms validate input and communicate their status clearly.
+- Images and videos load correctly or display appropriate fallbacks.
+- Interactive overlays, modals, menus, and galleries open and close properly.
+- Browser navigation, page refreshes, and direct access to individual HTML files work as expected.
+
+Do not leave decorative controls that appear functional but do nothing.
+
+Ensure that the entire platform feels like one unified product rather than several unrelated pages.
+
+## 7. Accessibility and Real-World Compatibility
+
+Make the platform usable and understandable for a wide range of customers.
+
+Implement appropriate semantic HTML, accessible labels, keyboard navigation, sufficient color contrast, visible focus states, descriptive alternative text, and reduced-motion support.
+
+Test layouts across realistic mobile viewport sizes and modern browsers.
+
+Pay particular attention to usability on Android Chrome and iOS Safari.
+
+## 8. Professional Quality Assurance
+
+Do not assume that the project is complete simply because the code has been written.
+
+Perform multiple review and testing passes.
+
+Use this workflow:
+
+1. Audit the existing implementation and identify weaknesses.
+2. Prioritize issues based on their impact on customers, business functionality, mobile usability, and performance.
+3. Improve the visual design and overall experience.
+4. Inspect and test every page and major interaction.
+5. Check responsive behavior at different screen sizes.
+6. Identify and fix layout problems, JavaScript errors, broken links, and inconsistent components.
+7. Optimize performance and remove unnecessary complexity.
+8. Perform a final end-to-end review from the perspective of an actual customer and the business owner.
+
+Fix issues you discover instead of merely reporting them.
+
+Do not claim that something has been tested unless you have actually tested it. Be transparent about any limitations that cannot be verified in the current environment.
+
+## 9. Developer Maintainability and Project Handover
+
+Remember that I am the developer who will maintain, customize, and eventually hand this website over to the business owner.
+
+The final implementation must remain approachable and understandable, even when it contains professional-level functionality.
+
+Keep:
+- File organization logical and predictable.
+- Reusable components and shared styles properly organized.
+- Business content and editable configurations easy to locate.
+- Social media links, contact information, images, and service descriptions straightforward to update.
+- JavaScript functions clearly structured and appropriately documented.
+- Dependencies and external services explicitly documented.
+
+Provide or update an Indonesian-language README explaining the project structure, how to run the website, how to modify content and assets, and how to maintain or extend its functionality.
+
+## 10. Final Delivery Standard
+
+I expect a complete, polished, and functional initial project dump that is ready for practical review, customization, and further development.
+
+Do not stop at visual suggestions, design mockups, partial implementations, or isolated code snippets.
+
+Work directly with the existing project files, preserve relevant assets, and implement the necessary improvements.
+
+Prioritize meaningful quality over unnecessary feature quantity. Make thoughtful independent decisions wherever possible instead of repeatedly asking for approval on minor details.
+
+The final result should satisfy three essential perspectives:
+
+**For customers:** A comfortable, trustworthy, visually appealing, fast, and effortless experience that makes exploring services and contacting the business feel natural.
+
+**For the business owner:** A professional digital presence that communicates credibility, showcases the quality of the services, supports customer acquisition, and is practical for everyday business use.
+
+**For me as the developer:** A clean, understandable, efficient, well-organized project that I can confidently manage, modify, debug, and expand without struggling with unnecessarily complicated code.
+
+My ambition is to deliver something that genuinely feels worth paying for.
+
+Think beyond simply completing a website. Build a practical digital asset that can support the growth and long-term development of a real business.
+
+**Give this project your highest level of practical engineering judgment, design consideration, attention to detail, and execution quality. Do not compromise functionality, usability, or maintainability for superficial visual appeal.**
+
+
+next prompt:
+
+gw pengen buat md yang baru alias ter update bernama updatedprompt1.md, sebagai prompt tambahan yang gw inginkan ini, biar lebih jelas pasti dan tegas, btw sebelumnya gw sudah sempet kasih prompt mentah ini ke ai dan udah digenerate, udah lumayan fungsinya tapi kek masih kurang aja gitu:
+
+I’ve changed my mind after reviewing this. It currently feels too focused on just "consultation," whereas what I actually need is a showcase of real projects—specifically highlighting the products and the video results. Using dummy projects is fine; I can simply swap out the content later. I’d like to include price estimates, similar to the reference I provided. In short, the focus should be on the products and services rather than just the individuals involved—keep it clear and direct, as shown in the image (IMG-20261026-WA0361.jpg) I’ve attached. Please overhaul everything to emphasize the products and services. Also, one crucial requirement: since the target audience includes Gen Z in both Indonesia and Singapore, I need a language toggle (English/Indonesian), with English set as the default. That’s exactly what I’m looking for—make sure nothing is overlooked or left out!
+
+
+I have attached a new document named `updatedprompt1.md`. This document contains additional requirements and important changes to the direction of the existing website project.
+
+Please read and understand the entire document carefully before making any modifications.
+
+**This is an update to an existing project, not a request to start from scratch.**
+
+I have already reviewed the initial implementation. Although several features are functional, the overall direction, business presentation, and customer experience still need significant improvement.
+
+I want you to approach this task as a professional product refinement and redevelopment process.
+
+### Your instructions:
+
+1. Thoroughly inspect the current project, its existing files, pages, components, functionality, and visual design.
+2. Compare the current implementation against both the original `myprompt.md` and the newly attached `updatedprompt1.md`.
+3. Treat `updatedprompt1.md` as the latest and authoritative source for the additional requirements and revised business direction.
+4. Identify everything that is incomplete, poorly implemented, inconsistent, missing, or not aligned with the intended business concept.
+5. Prioritize the actual products, services, packages, visual results, portfolio showcases, and editable estimated pricing. Do not let consultation-oriented content dominate the website.
+6. Implement the English/Indonesian language system across the entire website, with English as the default language.
+7. Improve the customer journey, mobile experience, visual presentation, and overall commercial quality.
+8. Preserve existing functionality and useful assets wherever they are appropriate. Fix or replace weak implementations when necessary.
+9. Ensure all pages, navigation, language switching, pricing displays, galleries, buttons, and ordering interactions work consistently.
+10. Keep the entire project clean, lightweight, structured, and easy for me to understand, manage, and expand as its developer.
+
+### Important:
+
+Do not simply acknowledge the document, summarize its contents, or provide another development plan.
+
+I expect you to take action and make the actual improvements directly in the existing project workspace.
+
+Do not overlook requirements, implement features superficially, or leave unfinished components disguised as completed work.
+
+Use your own professional judgment to make the best implementation decisions. Prioritize real functionality, visual consistency, customer convenience, and long-term maintainability over unnecessary complexity.
+
+After implementation, conduct a comprehensive review and test the actual results. Fix the issues you discover and clearly report anything that could not be verified.
+
+**My expectation is a substantial improvement over the current website—not just a minor visual update. Bring the existing project much closer to the complete, professional, commercially ready business platform described in the attached documents.**
+
+
+
+next prompt:
+
+kalo menambahkan pengen ada 4 themes? yang satu original default yaitu tema hangat bagaikan diatas kertas yang kreatif, yang kedua tema dark mode legit enak, ketiga terang simpel ga kebanyakan mikir langsungan, dan terakhir rgb buat yang mau gaya gayaan, tapi apapun itu tetep soft spoken dan smooth rasanya, 120fps lebih untuk scroll web, efek, animasi, vibes, dll, intinya dioptimalkan utamanya di mobile kek android
+
+I have attached `updatedprompt2.md`, which introduces the four-theme system and additional performance requirements.
+
+Please read this document thoroughly and integrate all its requirements into the existing website project.
+
+This is an important design and experience upgrade. I do not want a superficial color-changing feature. I want four genuinely distinct visual experiences that retain the same professional brand identity, functionality, usability, and overall quality.
+
+### Primary objective
+
+Implement all four themes as a complete, functional, site-wide visual system:
+
+1. **Warm Paper — Original Default:** The primary identity. Warm, creative, paper-inspired, editorial, welcoming, and aesthetically refined.
+2. **Deep Dark:** A sophisticated dark experience with comfortable contrast, balanced surfaces, and carefully selected accent colors.
+3. **Clean Light:** A clean, simple, bright, distraction-free experience with excellent readability and straightforward navigation.
+4. **RGB Pulse:** A distinctive modern RGB-inspired experience with controlled gradients, subtle color transitions, and tasteful interactive details. Keep it stylish rather than excessively neon or visually aggressive.
+
+### Implementation requirements
+
+**1. Global theme consistency**
+
+- Make all four themes available throughout the entire website.
+- Apply themes consistently to every page, section, component, modal, gallery, form, navigation bar, footer, and interactive element.
+- Do not allow individual pages to revert to an inconsistent default appearance.
+- Use a centralized design-token system with CSS custom properties wherever practical.
+- Ensure each theme has its own coherent background, surfaces, typography colors, borders, shadows, accent colors, and interaction states.
+
+**2. Theme switching and persistence**
+
+- Provide an intuitive and accessible theme selector.
+- Make switching immediate, smooth, and visually consistent.
+- Remember the customer's selected theme across page navigation and browser sessions using an appropriate lightweight persistence mechanism.
+- Keep Warm Paper as the initial default for first-time visitors.
+- Ensure the theme preference does not interfere with the English/Indonesian language preference.
+- Avoid flashing the wrong theme during initial page loading.
+
+**3. Mobile-first interaction**
+
+Prioritize Android smartphones while maintaining excellent compatibility with iOS, tablets, and desktop browsers.
+
+The theme selector must be easy to discover and operate using touch controls. Avoid oversized menus, complicated settings, and unnecessary interaction steps.
+
+**4. Smooth motion and high-refresh optimization**
+
+I want the website to feel exceptionally fluid and responsive.
+
+Optimize scrolling, transitions, hover effects, touch feedback, navigation, and micro-interactions for displays supporting 60 Hz, 90 Hz, and 120 Hz refresh rates.
+
+Use efficient CSS animations and transform/opacity-based transitions where appropriate. Avoid expensive effects, excessive blur, unnecessary JavaScript animation loops, layout thrashing, and animations that compromise scrolling performance.
+
+Do not artificially claim or force a 120 FPS guarantee. Prioritize stable frame pacing and the best achievable responsiveness based on each device's actual hardware, browser, and display capabilities.
+
+**5. Accessibility and user comfort**
+
+- Maintain readable contrast in every theme.
+- Support keyboard navigation and visible focus states.
+- Respect `prefers-reduced-motion`.
+- Avoid aggressive flashing, distracting visual movement, and excessive color saturation.
+- Keep RGB effects subtle, optional where appropriate, and comfortable for extended browsing.
+
+### Development and integration approach
+
+Before editing, inspect the complete existing project and identify how its current styles, scripts, page navigation, language system, and shared components are organized.
+
+Integrate the new theme system into the existing architecture rather than introducing unnecessary frameworks or duplicating code.
+
+Preserve all previously implemented business features, product showcases, pricing, galleries, bilingual content, and ordering functionality.
+
+Do not break existing pages or remove working functionality to accommodate the new design system.
+
+### Testing and final quality control
+
+Test all four themes across every available page.
+
+Verify that:
+- Theme switching works correctly.
+- The selected theme persists after navigation and refresh.
+- All components adapt correctly to every theme.
+- No text becomes unreadable or elements disappear.
+- Mobile layouts remain comfortable and responsive.
+- Animations remain smooth without unnecessary performance overhead.
+- Language switching continues to work independently.
+- There are no broken interactions, layout inconsistencies, or JavaScript errors.
+
+Fix any problems discovered during testing.
+
+### Final expectation
+
+I want all four themes to feel like four carefully designed experiences within one cohesive premium website.
+
+Warm Paper should communicate the original personality and creative identity. Deep Dark should feel refined and immersive. Clean Light should feel effortless and clear. RGB Pulse should offer a more expressive modern personality without sacrificing comfort.
+
+**Do not merely describe the changes or provide implementation suggestions. Modify the actual project files, integrate the system completely, test the results, and deliver a polished implementation that is ready for practical use.**
+
+Give special attention to Android usability, visual consistency, motion quality, performance, and long-term maintainability.
+
+The final result should feel thoughtfully designed, naturally responsive, and professionally executed—not like a collection of generic themes generated by an AI.

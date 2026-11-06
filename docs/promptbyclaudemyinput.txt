@@ -1,0 +1,48 @@
+ubah teks ini jadi prompt berbahasa inggris yang professional dan berkualitas, yang langsung dipahami ai agent nya dan bisa melakukannya dengan hasil yang maksimal, intinya sama persis sesuai dengan konteks yang ku inginkan, yang dimana ga terlalu ai banget, hasilnya natural dan organik yang disukai oleh sesama manusia, intinya memanusiakan manusia dengan sistem psikologis yang sangat efektif dan worth it tanpa adanya paksaan secara langsung, boleh generate myprompt.md nya sekalian setelah prompt nya dah matang dan tersedia, jobdesk konteks nya:
+
+saya ingin membuat web umkm yang simpel tapi sangat berfungsi untuk para penjual umkm, yang mudah diedit dan dikembangkan oleh diri saya sendiri sebagai developer, yang relate berkualitas professional tapi bisa dengan mudah ku pahami semuanya, saya butuh setidaknya 7-10 page yang simpel ga banyak basa basi, walau berkualitas tinggi dan gampang dikembangkan dan kelola, gw pengen yang gw buat ga gamang bikin males si client maupun pelanggan nya, dan ini dari beberapa referensi materinya:
+https://universal-magpie-c9c.notion.site/Web-101-Build-Your-Own-Link-in-Bio-3ef2eddec75280b9878bfc6368b08376
+https://universal-magpie-c9c.notion.site/Pertemuan-1-Cara-Kerja-Web-Tooling-HTML-3ef2eddec75280c5907ee46cadec5f34?pvs=25
+https://universal-magpie-c9c.notion.site/Pertemuan-2-Tailwind-Dari-Polos-Jadi-Cantik-3ef2eddec75280c5afdecbc970250bd7?pvs=25
+https://universal-magpie-c9c.notion.site/Pertemuan-3-JavaScript-DOM-3ef2eddec75280a381b6ec9dd1d6cfc9?pvs=25
+https://universal-magpie-c9c.notion.site/Pertemuan-4-Konsep-React-API-Deploy-3f02eddec752806c841ce4411d0801f5?pvs=25
+https://universal-magpie-c9c.notion.site/Sharing-Session-Bagaimana-Sebuah-Tim-Software-Developer-Bekerja-di-Industri-3f12eddec75280c58815dfa85dc43483?pvs=25
+https://universal-magpie-c9c.notion.site/Cheat-Sheet-3f12eddec7528045b072ce59fb8f8268?pvs=25
+https://aryamusthofa.github.io/bioprofile/
+https://armuzzdev.infinityfreeapp.com/
+https://renando.duingzcreative.site/#awards
+https://www.duingzforge.site/learn/portfolio-sinematik-ai-copy-prompt
+https://duingzcreative.site/renando?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAaeF3OTkl1JqJGuGa-ZMk1qS19QHSdA9jnq0Rf3B5RZvIpe-CPUyVXPWLzm0JA_aem_vmlnqoeiKSOTJwtHc3-bMA
+https://fakhriamrullah1411-arch.github.io/webkulinerjapan/
+
+Tema maupun Konteks UMKM ku untuk client:
+*Jasa editing foto dan video profesional siap buat kontenmu makin estetik, rapi, dan mencuri perhatian! 📸* ✨
+Bingung atur warna foto (color grading), potong klip video yang kaku, atau mau bikin visual produk yang 10uki high-end tapi enggak punya waktu? Biar tim kami yang kerjakan dari nol sampai siap upload.
+
+ *Layanan Editing Foto & Video Kami:* 
+
+• Editing Video: Reels, TikTok, YouTube, Video Produk (IKLAN UMKM), Video Cinematic, dan Dokumentasi Acara.
+• Editing Foto: Color grading / preset, retouching wajah/produk, manipulasi foto, hapus background, dan penyusunan feed Instagram.
+
+ *Keunggulan Kami:* 
+
+• Hasil Estetik & Modern: Mengikuti tren visual terkini yang disukai audiens.
+• Pengerjaan Cepat: On-time sesuai deadline yang disepakati.
+• Fleksibel: Dapat jatah revisi agar hasilnya sesuai dengan branding atau seleramu.
+
+
+saya ingin menambahkan biografi umkm penjual sebagai pemilik toko usahanya, aekalian sama bio link yang mengarahkan ke medsos penjual umkm tersebut, agar bisa saya serahkan web nya ke pemiliknya sebagai developer untuk umkm harus mengusahakan yang professional dan terbaik, tapi tetep gampang dipahami dikuasai bahkan dikembangkan oleh saya sendiri sebagai pembuat web nya
+
+langsung lengkapi aja itu web, anda selesaikan semuanya, dengan versi dump nya terlebih dahulu agar lebih mudah dan siap ku kembangkan dan kelola sendiri, nanti ku ubah yang perlu, tapi sekarang fokus sempurnakan dan lengkapi semuanya sampai matang, walau dimulai versi dump nya aja, selanjutnya bisa dikembangkan secara bertahap sampai semua selesai dengan sempurna
+
+lalu ada lagi, saya ingin membuat web khusus buat biodata saya sebagai pemilik umkm tersebut, referensi sudah tertera, web nya seperti yang arya musthofa itu, cuman nama diubah jadi sesuai tema dan konteks UMKM nya, dengan tema web dan posisinya style nya hampir sama seperti hal tersebut, intinya biodata nya sebagai umkm dimaksud yang sudah professional, ntah ig tiktok dll lengkap dah intinya
+
+untuk cara beralih page nya, pake pemanggilan page seperti ke biodata.html ketika di klik, otomatis cari file itu di dalam folder yang sama, sekaligus ada juga memainkan js nya juga, kalo ada python format .py yang bisa difungsikan silahkan juga, css juga ada yang dipisah kalau perlu, intinya terstruktur dan rapi mulus, buat se efisien mungkin dengan hasil yang berkualitas tinggi dan mudah dikembangkan dikelola diperbaiki disesuaikan dan lainnya, buat se nyaman mungkin aja, style gen z gitulah mesti yang ga bikin sakit mata dan ringan. 
+
+Note: Buat Prompt Nya Dulu Aja, Pahami Sebelum Eksekusi, Ga Usah Banyak Mikir Basa Basi, Untuk Selain Prompt Nanti Kalau Ada Instruksi Tambahan, Intinya Sesuai Konteks
+
+
+
+next step:
+
+Coba lu pake metode git clone terus lu cek semua yang diperlukan secara manual lebih dalam, apa yang kurang, yang janggal, dan yang perlu disempurnakan, sesuai dengan prompt di file .md nya, agar lebih professional siap pakai untuk ribuan UMKM serius, tetep dengan simpel ga basa basi, tapi effort dan berkualitas tinggi, sesuai tema nya itu, gw cuman pengen tetep kelihatan original yang pasti natural dan organik, biar ga terlalu kelihatan hasil generate ai slop gitulah, yang pasti untuk pesen nya bisa wa Ig maupun DM tiktok, ga harus ke wa dowang, bisa fleksibel tergantung client nya, dan fokus nya ke produk dan jasa nya, bukan cuman konsultasi, biar lebih tegas dan jelas pastinya transparan, btw gw juga pengen itu navbar nya ga kek gitu, tapi pake scrollbar ke samping kanan kiri, biar lebih jelas dan gampang, cocok buat orang awam yang mau pesen aja ga basa basi, intinya full optimasi dan prioritas stabil dan sempurna untuk mobile device, btw ini cuman planning dowang, kalo yang eksekusi fix full nya nanti tergantung instruksi selanjutnya
