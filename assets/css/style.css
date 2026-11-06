@@ -1766,6 +1766,40 @@ html[data-theme="rgb-pulse"] .brand:focus-visible .brand-mark {
   opacity: 0.6;
 }
 
+.ambient-music-control {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.35rem 0.15rem;
+  color: var(--ink);
+  font-size: 0.88rem;
+  font-weight: 650;
+}
+
+.ambient-music-toggle {
+  min-height: 36px;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+
+.ambient-music-toggle[aria-pressed="true"] {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--page-raised);
+}
+
+.ambient-music-toggle:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
 .order-cart-panel,
 .feedback-panel {
   padding: clamp(1.1rem, 3vw, 2rem);

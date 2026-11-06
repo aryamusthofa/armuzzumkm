@@ -25,6 +25,11 @@
   let rgbPulseEnabled = false;
   let soundEffectsEnabled = false;
   let audioContext;
+  let ambientMusicStarting = false;
+  let ambientMusicPlaying = false;
+  let ambientMusicNodes = [];
+  let ambientMusicTimer;
+  let ambientChordIndex = 0;
   let lastSoundAt = 0;
   let revealObserver;
   const reducedMotionQuery = window.matchMedia?.("(prefers-reduced-motion: reduce)");
@@ -66,6 +71,110 @@
     document.querySelectorAll("[data-sound-choice]").forEach((toggle) => {
       toggle.checked = soundEffectsEnabled;
     });
+    updateAmbientMusicControl();
+  }
+
+  function updateAmbientMusicControl() {
+    const playLabel = window.SITE_COPY?.[document.documentElement.lang]?.["theme.musicPlay"] ||
+      "Play ambient music";
+    const pauseLabel = window.SITE_COPY?.[document.documentElement.lang]?.["theme.musicPause"] ||
+      "Pause ambient music";
+    document.querySelectorAll("[data-music-toggle]").forEach((button) => {
+      button.textContent = ambientMusicPlaying ? pauseLabel : playLabel;
+      button.setAttribute("aria-label", button.textContent);
+      button.setAttribute("aria-pressed", String(ambientMusicPlaying));
+    });
+  }
+
+  function stopAmbientMusic() {
+    ambientMusicStarting = false;
+    if (ambientMusicTimer) {
+      window.clearInterval(ambientMusicTimer);
+      ambientMusicTimer = null;
+    }
+    ambientMusicPlaying = false;
+    const nodes = ambientMusicNodes;
+    ambientMusicNodes = [];
+    if (!nodes.length || !audioContext) {
+      updateAmbientMusicControl();
+      return;
+    }
+    const stopAt = audioContext.currentTime + 0.6;
+    nodes.forEach(({ oscillator, gain }) => {
+      gain.gain.cancelScheduledValues(audioContext.currentTime);
+      gain.gain.setTargetAtTime(0, audioContext.currentTime, 0.12);
+      oscillator.stop(stopAt);
+      oscillator.addEventListener("ended", () => {
+        oscillator.disconnect();
+        gain.disconnect();
+      }, { once: true });
+    });
+    updateAmbientMusicControl();
+  }
+
+  async function startAmbientMusic() {
+    if (ambientMusicPlaying || ambientMusicStarting) return;
+    const AudioContextConstructor = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContextConstructor) {
+      console.warn("Ambient music is unavailable because this browser does not support Web Audio.");
+      return;
+    }
+
+    try {
+      ambientMusicStarting = true;
+      audioContext ||= new AudioContextConstructor();
+      await audioContext.resume();
+      if (document.hidden || !ambientMusicStarting) {
+        ambientMusicStarting = false;
+        updateAmbientMusicControl();
+        return;
+      }
+
+      const chords = [
+        [261.63, 329.63, 392.00],
+        [220.00, 261.63, 329.63],
+        [174.61, 220.00, 261.63],
+        [196.00, 246.94, 293.66]
+      ];
+      ambientChordIndex = 0;
+      const now = audioContext.currentTime;
+      ambientMusicNodes = chords[0].map((frequency) => {
+        const oscillator = audioContext.createOscillator();
+        const gain = audioContext.createGain();
+        oscillator.type = "sine";
+        oscillator.frequency.setValueAtTime(frequency, now);
+        gain.gain.setValueAtTime(0, now);
+        gain.gain.linearRampToValueAtTime(0.035, now + 2.5);
+        oscillator.connect(gain);
+        gain.connect(audioContext.destination);
+        oscillator.start(now);
+        return { oscillator, gain };
+      });
+      ambientMusicStarting = false;
+      ambientMusicPlaying = true;
+      updateAmbientMusicControl();
+      ambientMusicTimer = window.setInterval(() => {
+        if (document.hidden) {
+          stopAmbientMusic();
+          return;
+        }
+        ambientChordIndex = (ambientChordIndex + 1) % chords.length;
+        const chord = chords[ambientChordIndex];
+        const chordStart = audioContext.currentTime;
+        ambientMusicNodes.forEach(({ oscillator }, index) => {
+          oscillator.frequency.cancelScheduledValues(chordStart);
+          oscillator.frequency.setTargetAtTime(chord[index], chordStart, 1.8);
+        });
+      }, 8000);
+    } catch (error) {
+      stopAmbientMusic();
+      console.warn("Ambient music could not be played.", error);
+    }
+  }
+
+  function toggleAmbientMusic() {
+    if (ambientMusicPlaying || ambientMusicStarting) stopAmbientMusic();
+    else void startAmbientMusic();
   }
 
   function playUiSound() {
@@ -180,13 +289,19 @@
   }
 
   applyTheme(activeTheme);
-  document.addEventListener("theme-controls-rendered", applyMotionPreferences);
+  document.addEventListener("theme-controls-rendered", () => {
+    applyMotionPreferences();
+    updateAmbientMusicControl();
+  });
   document.addEventListener("DOMContentLoaded", () => {
     updateThemeControls();
     applyMotionPreferences();
     setupScrollEffects();
   }, { once: true });
   reducedMotionQuery?.addEventListener?.("change", applyMotionPreferences);
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) stopAmbientMusic();
+  });
 
   document.addEventListener("change", (event) => {
     const motionToggle = event.target.closest("[data-motion-choice]");
@@ -209,6 +324,10 @@
 
   document.addEventListener("click", (event) => {
     animateInteraction(event.target);
+    if (event.target.closest("[data-music-toggle]")) {
+      toggleAmbientMusic();
+      return;
+    }
     if (event.target.closest("[data-sound-choice]")) {
       if (soundEffectsEnabled) playUiSound();
       return;

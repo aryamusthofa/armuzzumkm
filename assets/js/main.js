@@ -645,13 +645,19 @@
         <label class="motion-switch">
           <input class="motion-switch__control" type="checkbox" role="switch" data-sound-choice>
           <span data-sound-label></span>
-        </label>`;
+        </label>
+        <div class="ambient-music-control" role="group" data-music-group>
+          <span data-music-label></span>
+          <button class="ambient-music-toggle" type="button" data-music-toggle aria-pressed="false"></button>
+        </div>`;
         panel.append(settings);
       }
       settings.setAttribute("aria-label", t("theme.effects"));
       settings.querySelector("[data-motion-label]").textContent = t("theme.motion");
       settings.querySelector("[data-rgb-pulse-label]").textContent = t("theme.rgbEffect");
       settings.querySelector("[data-sound-label]").textContent = t("theme.soundEffect");
+      settings.querySelector("[data-music-label]").textContent = t("theme.ambientMusic");
+      settings.querySelector("[data-music-group]").setAttribute("aria-label", t("theme.ambientMusic"));
     });
   }
 
