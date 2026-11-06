@@ -17,6 +17,7 @@
   let activeServiceFilter = "all";
   let projectDialog;
   let projectDialogTrigger;
+  let projectDialogAnimation;
   let orderCart = loadOrderCart();
   let descriptionWasEdited = false;
   let cartStatusRegion;
@@ -640,18 +641,24 @@
         <label class="motion-switch">
           <input class="motion-switch__control" type="checkbox" role="switch" data-rgb-pulse-choice>
           <span data-rgb-pulse-label></span>
+        </label>
+        <label class="motion-switch">
+          <input class="motion-switch__control" type="checkbox" role="switch" data-sound-choice>
+          <span data-sound-label></span>
         </label>`;
         panel.append(settings);
       }
       settings.setAttribute("aria-label", t("theme.effects"));
       settings.querySelector("[data-motion-label]").textContent = t("theme.motion");
       settings.querySelector("[data-rgb-pulse-label]").textContent = t("theme.rgbEffect");
+      settings.querySelector("[data-sound-label]").textContent = t("theme.soundEffect");
     });
   }
 
   function applyLanguage() {
     translateStaticContent();
     renderThemeSettings();
+    document.dispatchEvent(new Event("theme-controls-rendered"));
     renderProfile();
     renderServices();
     renderPackages();
@@ -740,6 +747,13 @@
       event.preventDefault();
       closeProjectDialog();
     });
+    projectDialog.addEventListener("close", () => {
+      projectDialog.dataset.closing = "false";
+      projectDialogAnimation = null;
+      projectDialogTrigger?.setAttribute("aria-expanded", "false");
+      projectDialogTrigger?.focus({ preventScroll: true });
+      projectDialogTrigger = null;
+    });
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape" && projectDialog.open) {
         event.preventDefault();
@@ -750,11 +764,24 @@
   }
 
   function closeProjectDialog() {
-    if (!projectDialog?.open) return;
-    projectDialog.close();
-    projectDialogTrigger?.setAttribute("aria-expanded", "false");
-    projectDialogTrigger?.focus({ preventScroll: true });
-    projectDialogTrigger = null;
+    if (!projectDialog?.open || projectDialog.dataset.closing === "true") return;
+    const shouldAnimate = document.documentElement.classList.contains("effects-enabled") &&
+      !window.matchMedia?.("(prefers-reduced-motion: reduce)").matches &&
+      typeof projectDialog.animate === "function";
+    if (!shouldAnimate) {
+      projectDialog.close();
+      return;
+    }
+
+    projectDialog.dataset.closing = "true";
+    projectDialogAnimation?.cancel();
+    projectDialogAnimation = projectDialog.animate([
+      { opacity: 1, transform: "translateY(0) scale(1)" },
+      { opacity: 0, transform: "translateY(10px) scale(.98)" }
+    ], { duration: 160, easing: "ease-in", fill: "forwards" });
+    projectDialogAnimation.onfinish = () => {
+      if (projectDialog.open && projectDialog.dataset.closing === "true") projectDialog.close();
+    };
   }
 
   function renderDialogProject(project) {
@@ -802,7 +829,20 @@
     projectDialogTrigger = trigger;
     trigger?.setAttribute("aria-expanded", "true");
     renderDialogProject(project);
-    if (typeof projectDialog.showModal === "function") projectDialog.showModal();
+    if (typeof projectDialog.showModal !== "function") return;
+    projectDialogAnimation?.cancel();
+    projectDialog.dataset.closing = "false";
+    projectDialog.showModal();
+    const shouldAnimate = document.documentElement.classList.contains("effects-enabled") &&
+      !window.matchMedia?.("(prefers-reduced-motion: reduce)").matches &&
+      typeof projectDialog.animate === "function";
+    if (shouldAnimate) {
+      projectDialogAnimation = projectDialog.animate([
+        { opacity: 0, transform: "translateY(14px) scale(.98)" },
+        { opacity: 1, transform: "translateY(0) scale(1)" }
+      ], { duration: 220, easing: "cubic-bezier(.2,.8,.2,1)" });
+    }
+    projectDialog.querySelector("[data-dialog-close]")?.focus({ preventScroll: true });
   }
 
   function setupFilters() {

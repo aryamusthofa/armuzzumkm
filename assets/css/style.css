@@ -1612,6 +1612,10 @@ html[data-theme="rgb-pulse"] .brand:focus-visible .brand-mark {
   background: var(--overlay);
 }
 
+.project-dialog[data-closing="true"] {
+  pointer-events: none;
+}
+
 .project-dialog__bar {
   display: flex;
   align-items: flex-start;
@@ -2022,6 +2026,26 @@ html:not(.effects-enabled) .motion-switch__control::before {
   transition-duration: 160ms !important;
 }
 
+html.effects-enabled .motion-reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 420ms ease, transform 420ms ease;
+}
+
+html.effects-enabled .motion-reveal.motion-reveal--visible {
+  opacity: 1;
+  transform: none;
+}
+
+html.effects-enabled .interaction-feedback {
+  animation: interaction-feedback 220ms ease-out;
+}
+
+@keyframes interaction-feedback {
+  0%, 100% { transform: scale(1); }
+  42% { transform: scale(.97); }
+}
+
 @keyframes subtle-rgb-pulse {
   0%, 100% { box-shadow: 0 0 0 rgba(110, 150, 255, 0); }
   50% { box-shadow: 0 0 12px rgba(110, 150, 255, 0.38); }
@@ -2030,6 +2054,19 @@ html:not(.effects-enabled) .motion-switch__control::before {
 html.rgb-pulse-enabled[data-theme="rgb-pulse"] .brand-mark,
 html.rgb-pulse-enabled[data-theme="rgb-pulse"] .button--primary {
   animation: subtle-rgb-pulse 3.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.effects-enabled .interaction-feedback {
+    animation: none;
+  }
+
+  html.effects-enabled .motion-reveal,
+  html.effects-enabled .motion-reveal.motion-reveal--visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 @media (max-width: 600px) {

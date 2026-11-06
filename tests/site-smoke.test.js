@@ -119,9 +119,18 @@ test("profile examples, reduced-motion controls, and social links remain honest"
   assert.match(profile, /profile\.testimonialsNote/);
   assert.match(theme, /let effectsEnabled = false/);
   assert.match(theme, /let rgbPulseEnabled = false/);
+  assert.match(theme, /let soundEffectsEnabled = false/);
+  assert.match(theme, /studio-sound-effects-enabled/);
+  assert.match(theme, /new AudioContextConstructor/);
+  assert.match(theme, /motion-reveal--visible/);
   assert.match(theme, /prefers-reduced-motion/);
   assert.match(theme, /toggle\.checked = effectsEnabled && !reducedMotion/);
   assert.match(theme, /toggle\.checked = rgbPulseEnabled && !reducedMotion/);
+  assert.match(read("assets/js/translations.js"), /"theme\.soundEffect": "UI sounds"/);
+  assert.match(read("assets/js/translations.js"), /"theme\.soundEffect": "Suara antarmuka"/);
+  assert.match(read("assets/css/style.css"), /html\.effects-enabled \.motion-reveal/);
+  assert.match(read("assets/css/style.css"), /html\.effects-enabled \.interaction-feedback/);
+  assert.match(read("assets/js/main.js"), /projectDialogAnimation\.onfinish/);
   assert.match(read("assets/js/main.js"), /role="switch"/);
   assert.ok(config.socialLinks.every((link) => !/github/i.test(link.label + link.url)));
   assert.doesNotMatch(read("README.md"), /github/i);
