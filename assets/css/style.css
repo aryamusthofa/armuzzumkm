@@ -1767,15 +1767,28 @@ html[data-theme="rgb-pulse"] .brand:focus-visible .brand-mark {
 }
 
 .ambient-music-control {
-  display: flex;
-  min-height: 44px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
-  justify-content: space-between;
   gap: 0.75rem;
   padding: 0.35rem 0.15rem;
   color: var(--ink);
   font-size: 0.88rem;
   font-weight: 650;
+}
+
+.ambient-music-time,
+.ambient-music-status {
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+.ambient-music-status {
+  grid-column: 1 / -1;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 .ambient-music-toggle {

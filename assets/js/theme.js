@@ -24,15 +24,23 @@
   let effectsEnabled = false;
   let rgbPulseEnabled = false;
   let soundEffectsEnabled = false;
+  const musicPositionStorageKey = "studio-lofi-position";
+  const ambientMusic = document.createElement("audio");
+  const ambientMusicSource = document.createElement("source");
+  ambientMusicSource.src = new URL("./loficafe.m4a", document.baseURI).href;
+  ambientMusicSource.type = "audio/mp4";
+  ambientMusic.append(ambientMusicSource);
+  ambientMusic.loop = true;
+  ambientMusic.preload = "metadata";
+  ambientMusic.volume = 0.22;
+  ambientMusic.playsInline = true;
+  ambientMusic.hidden = true;
+  ambientMusic.setAttribute("aria-hidden", "true");
   let audioContext;
-  let ambientMusicBus;
   let ambientMusicStarting = false;
   let ambientMusicPlaying = false;
-  let ambientMusicNodes = [];
-  let ambientMusicTimer;
-  let ambientMusicStep = 0;
-  let nextAmbientMusicStepAt = 0;
-  let ambientNoiseBuffer;
+  let ambientMusicAttempt = 0;
+  let ambientRetryArmed = false;
   let lastSoundAt = 0;
   let revealObserver;
   const reducedMotionQuery = window.matchMedia?.("(prefers-reduced-motion: reduce)");
@@ -82,213 +90,125 @@
       "Play lo-fi music";
     const pauseLabel = window.SITE_COPY?.[document.documentElement.lang]?.["theme.musicPause"] ||
       "Pause lo-fi music";
+    const timeLabel = window.SITE_COPY?.[document.documentElement.lang]?.["theme.musicTime"] ||
+      "Elapsed time / duration";
     document.querySelectorAll("[data-music-toggle]").forEach((button) => {
-      button.textContent = ambientMusicPlaying ? pauseLabel : playLabel;
+      const active = ambientMusicPlaying || ambientMusicStarting;
+      button.textContent = active ? pauseLabel : playLabel;
       button.setAttribute("aria-label", button.textContent);
-      button.setAttribute("aria-pressed", String(ambientMusicPlaying));
+      button.setAttribute("aria-pressed", String(active));
+      button.setAttribute("aria-busy", String(ambientMusicStarting));
+    });
+    document.querySelectorAll("[data-music-time]").forEach((time) => {
+      time.setAttribute("aria-label", timeLabel);
+      time.textContent = `${formatMusicTime(ambientMusic.currentTime)} / ${formatMusicTime(ambientMusic.duration)}`;
+    });
+  }
+
+  function formatMusicTime(seconds) {
+    if (!Number.isFinite(seconds) || seconds < 0) return "--:--";
+    const totalSeconds = Math.floor(seconds);
+    const minutes = Math.floor(totalSeconds / 60);
+    const remainder = totalSeconds % 60;
+    return `${String(minutes).padStart(2, "0")}:${String(remainder).padStart(2, "0")}`;
+  }
+
+  function updateAmbientMusicStatus(key) {
+    const message = key
+      ? window.SITE_COPY?.[document.documentElement.lang]?.[key] || ""
+      : "";
+    document.querySelectorAll("[data-music-status]").forEach((status) => {
+      status.textContent = message;
     });
   }
 
   function stopAmbientMusic() {
     ambientMusicStarting = false;
-    if (ambientMusicTimer) {
-      window.clearInterval(ambientMusicTimer);
-      ambientMusicTimer = null;
-    }
+    ambientMusicAttempt += 1;
+    ambientMusic.pause();
     ambientMusicPlaying = false;
-    const nodes = ambientMusicNodes;
-    ambientMusicNodes = [];
-    if (!nodes.length || !audioContext) {
-      updateAmbientMusicControl();
-      return;
-    }
-    const now = audioContext.currentTime;
-    nodes.forEach(({ sources, gain, filter }) => {
-      gain.gain.cancelScheduledValues(now);
-      gain.gain.setTargetAtTime(0, now, 0.045);
-      sources.forEach((source) => {
-        try {
-          source.stop(now + 0.18);
-        } catch (error) {
-          if (error.name !== "InvalidStateError") {
-            console.warn("An ambient music voice could not be stopped.", error);
-          }
-        }
-      });
-      sources[0]?.addEventListener("ended", () => {
-        sources.forEach((source) => source.disconnect());
-        filter?.disconnect();
-        gain.disconnect();
-      }, { once: true });
-    });
+    updateAmbientMusicStatus("");
     updateAmbientMusicControl();
-  }
-
-  function midiFrequency(note) {
-    return 440 * 2 ** ((note - 69) / 12);
-  }
-
-  function trackAmbientMusicVoice(sources, gain, filter) {
-    const voice = { sources, gain, filter };
-    ambientMusicNodes.push(voice);
-    sources[0].addEventListener("ended", () => {
-      ambientMusicNodes = ambientMusicNodes.filter((item) => item !== voice);
-      sources.forEach((source) => source.disconnect());
-      filter?.disconnect();
-      gain.disconnect();
-    }, { once: true });
-  }
-
-  function playAmbientTone(frequency, startAt, duration, volume, filterFrequency = 1800) {
-    const fundamental = audioContext.createOscillator();
-    const overtone = audioContext.createOscillator();
-    const blend = audioContext.createGain();
-    const filter = audioContext.createBiquadFilter();
-    const envelope = audioContext.createGain();
-    fundamental.type = "triangle";
-    fundamental.frequency.setValueAtTime(frequency, startAt);
-    overtone.type = "sine";
-    overtone.frequency.setValueAtTime(frequency * 2, startAt);
-    blend.gain.setValueAtTime(0.18, startAt);
-    filter.type = "lowpass";
-    filter.frequency.setValueAtTime(filterFrequency, startAt);
-    filter.Q.setValueAtTime(0.7, startAt);
-    envelope.gain.setValueAtTime(0.0001, startAt);
-    envelope.gain.linearRampToValueAtTime(volume, startAt + 0.012);
-    envelope.gain.exponentialRampToValueAtTime(0.0001, startAt + duration);
-    fundamental.connect(filter);
-    overtone.connect(blend);
-    blend.connect(filter);
-    filter.connect(envelope);
-    envelope.connect(ambientMusicBus);
-    fundamental.start(startAt);
-    overtone.start(startAt);
-    fundamental.stop(startAt + duration + 0.02);
-    overtone.stop(startAt + duration + 0.02);
-    trackAmbientMusicVoice([fundamental, overtone], envelope, filter);
-  }
-
-  function playAmbientNoise(startAt, duration, volume, filterType, filterFrequency) {
-    const source = audioContext.createBufferSource();
-    const filter = audioContext.createBiquadFilter();
-    const envelope = audioContext.createGain();
-    source.buffer = ambientNoiseBuffer;
-    filter.type = filterType;
-    filter.frequency.setValueAtTime(filterFrequency, startAt);
-    envelope.gain.setValueAtTime(0.0001, startAt);
-    envelope.gain.linearRampToValueAtTime(volume, startAt + 0.004);
-    envelope.gain.exponentialRampToValueAtTime(0.0001, startAt + duration);
-    source.connect(filter);
-    filter.connect(envelope);
-    envelope.connect(ambientMusicBus);
-    source.start(startAt);
-    source.stop(startAt + duration + 0.02);
-    trackAmbientMusicVoice([source], envelope, filter);
-  }
-
-  function scheduleAmbientMusicStep(step, startAt) {
-    const beatsPerMinute = 78;
-    const beatLength = 60 / beatsPerMinute;
-    const sixteenthLength = beatLength / 4;
-    const stepInBar = step % 16;
-    const bar = Math.floor(step / 16) % 4;
-    const chords = [
-      { notes: [60, 64, 67, 71], bass: 36 },
-      { notes: [57, 60, 64, 67], bass: 33 },
-      { notes: [53, 57, 60, 64], bass: 29 },
-      { notes: [55, 59, 62, 65], bass: 31 }
-    ];
-    const chord = chords[bar];
-    const swungAt = startAt + (stepInBar % 4 === 2 ? sixteenthLength * 0.12 : 0);
-
-    if (stepInBar === 0 || stepInBar === 8) {
-      chord.notes.forEach((note, index) => {
-        playAmbientTone(midiFrequency(note), swungAt + index * 0.018, 0.95, 0.028, 1500);
-      });
-      playAmbientTone(midiFrequency(chord.bass), swungAt, 0.72, 0.075, 420);
-    } else if (stepInBar === 6 || stepInBar === 14) {
-      playAmbientTone(midiFrequency(chord.notes[2] + 12), swungAt, 0.38, 0.012, 2100);
-    }
-
-    if (stepInBar === 0 || stepInBar === 8 || stepInBar === 10) {
-      const kick = audioContext.createOscillator();
-      const envelope = audioContext.createGain();
-      kick.type = "sine";
-      kick.frequency.setValueAtTime(stepInBar === 10 ? 72 : 105, startAt);
-      kick.frequency.exponentialRampToValueAtTime(42, startAt + 0.11);
-      envelope.gain.setValueAtTime(0.16, startAt);
-      envelope.gain.exponentialRampToValueAtTime(0.0001, startAt + 0.16);
-      kick.connect(envelope);
-      envelope.connect(ambientMusicBus);
-      kick.start(startAt);
-      kick.stop(startAt + 0.18);
-      trackAmbientMusicVoice([kick], envelope);
-    }
-
-    if (stepInBar === 4 || stepInBar === 12) {
-      playAmbientNoise(startAt, 0.16, 0.035, "bandpass", 1900);
-    } else if (stepInBar % 4 === 2) {
-      playAmbientNoise(swungAt, 0.045, 0.009, "highpass", 7200);
-    }
-
-    const melodicNotes = [null, 76, null, 74, null, 71, null, 67, null, 69, null, 72, null, 71, null, 67];
-    const melody = melodicNotes[stepInBar];
-    if (melody && (bar === 0 || bar === 2)) {
-      playAmbientTone(midiFrequency(melody), swungAt, 0.32, 0.009, 2600);
-    }
-  }
-
-  function scheduleAmbientMusic() {
-    if (!ambientMusicPlaying || !audioContext) return;
-    const sixteenthLength = 60 / 78 / 4;
-    while (nextAmbientMusicStepAt < audioContext.currentTime + 0.12) {
-      scheduleAmbientMusicStep(ambientMusicStep, nextAmbientMusicStepAt);
-      ambientMusicStep += 1;
-      nextAmbientMusicStepAt += sixteenthLength;
-    }
   }
 
   async function startAmbientMusic() {
     if (ambientMusicPlaying || ambientMusicStarting) return;
-    const AudioContextConstructor = window.AudioContext || window.webkitAudioContext;
-    if (!AudioContextConstructor) {
-      console.warn("Ambient music is unavailable because this browser does not support Web Audio.");
-      return;
-    }
-
+    ambientMusicStarting = true;
+    updateAmbientMusicStatus("theme.musicLoading");
+    updateAmbientMusicControl();
+    const attempt = ++ambientMusicAttempt;
+    let startupTimeout;
     try {
-      ambientMusicStarting = true;
-      audioContext ||= new AudioContextConstructor();
-      await audioContext.resume();
-      if (document.hidden || !ambientMusicStarting) {
-        ambientMusicStarting = false;
-        updateAmbientMusicControl();
+      await Promise.race([
+        ambientMusic.play(),
+        new Promise((_, reject) => {
+          startupTimeout = window.setTimeout(() => {
+            const error = new Error("The audio stream did not start in time.");
+            error.name = "TimeoutError";
+            reject(error);
+          }, 15000);
+        })
+      ]);
+      if (attempt !== ambientMusicAttempt) {
+        ambientMusic.pause();
         return;
       }
-
-      const now = audioContext.currentTime;
-      ambientMusicBus ||= audioContext.createGain();
-      ambientMusicBus.gain.setValueAtTime(0.62, now);
-      ambientMusicBus.connect(audioContext.destination);
-      if (!ambientNoiseBuffer) {
-        ambientNoiseBuffer = audioContext.createBuffer(1, audioContext.sampleRate, audioContext.sampleRate);
-        const noise = ambientNoiseBuffer.getChannelData(0);
-        let value = 0;
-        for (let index = 0; index < noise.length; index += 1) {
-          value = (value + 0.025 * (Math.random() * 2 - 1)) / 1.025;
-          noise[index] = value * 3.5;
-        }
-      }
-      ambientMusicStep = 0;
-      nextAmbientMusicStepAt = now + 0.04;
-      ambientMusicStarting = false;
       ambientMusicPlaying = true;
+      ambientMusicStarting = false;
       updateAmbientMusicControl();
-      scheduleAmbientMusic();
-      ambientMusicTimer = window.setInterval(scheduleAmbientMusic, 25);
     } catch (error) {
-      stopAmbientMusic();
-      console.warn("Ambient music could not be played.", error);
+      if (attempt !== ambientMusicAttempt) return;
+      ambientMusicPlaying = false;
+      ambientMusicStarting = false;
+      ambientMusicAttempt += 1;
+      ambientMusic.pause();
+      updateAmbientMusicControl();
+      if (error.name === "NotAllowedError") {
+        updateAmbientMusicStatus("theme.musicTapToStart");
+        armAmbientMusicRetry();
+      } else {
+        updateAmbientMusicStatus("theme.musicUnavailable");
+        console.warn("The background music could not be started.", error);
+      }
+    } finally {
+      window.clearTimeout(startupTimeout);
+    }
+  }
+
+  function retryAmbientMusicOnInteraction(event) {
+    document.removeEventListener("pointerdown", retryAmbientMusicOnInteraction, true);
+    document.removeEventListener("keydown", retryAmbientMusicOnInteraction, true);
+    ambientRetryArmed = false;
+    if (event.target instanceof Element && event.target.closest("[data-music-toggle]")) return;
+    void startAmbientMusic();
+  }
+
+  function armAmbientMusicRetry() {
+    if (ambientRetryArmed) return;
+    ambientRetryArmed = true;
+    document.addEventListener("pointerdown", retryAmbientMusicOnInteraction, true);
+    document.addEventListener("keydown", retryAmbientMusicOnInteraction, true);
+  }
+
+  function restoreAmbientMusicPosition() {
+    if (ambientMusic.readyState < 1) return;
+    try {
+      const savedPosition = Number(sessionStorage.getItem(musicPositionStorageKey));
+      if (Number.isFinite(savedPosition) && savedPosition >= 0 &&
+        Number.isFinite(ambientMusic.duration) && savedPosition < ambientMusic.duration) {
+        ambientMusic.currentTime = savedPosition;
+      }
+    } catch (error) {
+      console.warn("The background music position could not be restored.", error);
+    }
+  }
+
+  function saveAmbientMusicPosition() {
+    if (!Number.isFinite(ambientMusic.currentTime)) return;
+    try {
+      sessionStorage.setItem(musicPositionStorageKey, String(ambientMusic.currentTime));
+    } catch (error) {
+      console.warn("The background music position could not be saved.", error);
     }
   }
 
@@ -408,6 +328,22 @@
     }
   }
 
+  ambientMusic.addEventListener("loadedmetadata", () => {
+    restoreAmbientMusicPosition();
+    updateAmbientMusicControl();
+  });
+  ambientMusic.addEventListener("timeupdate", updateAmbientMusicControl);
+  ambientMusic.addEventListener("durationchange", updateAmbientMusicControl);
+  ambientMusic.addEventListener("error", () => {
+    ambientMusicAttempt += 1;
+    ambientMusicStarting = false;
+    ambientMusicPlaying = false;
+    updateAmbientMusicControl();
+    updateAmbientMusicStatus("theme.musicUnavailable");
+    console.warn("The background music file could not be loaded.", ambientMusic.error);
+  });
+  window.addEventListener("pagehide", saveAmbientMusicPosition);
+
   applyTheme(activeTheme);
   document.addEventListener("theme-controls-rendered", () => {
     applyMotionPreferences();
@@ -417,11 +353,12 @@
     updateThemeControls();
     applyMotionPreferences();
     setupScrollEffects();
+    document.body.append(ambientMusic);
+    ambientMusic.load();
+    restoreAmbientMusicPosition();
+    void startAmbientMusic();
   }, { once: true });
   reducedMotionQuery?.addEventListener?.("change", applyMotionPreferences);
-  document.addEventListener("visibilitychange", () => {
-    if (document.hidden) stopAmbientMusic();
-  });
 
   document.addEventListener("change", (event) => {
     const motionToggle = event.target.closest("[data-motion-choice]");

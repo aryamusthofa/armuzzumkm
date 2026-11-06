@@ -649,6 +649,8 @@
         <div class="ambient-music-control" role="group" data-music-group>
           <span data-music-label></span>
           <button class="ambient-music-toggle" type="button" data-music-toggle aria-pressed="false"></button>
+          <span class="ambient-music-time" data-music-time aria-label="Music time">00:00 / --:--</span>
+          <span class="ambient-music-status" data-music-status role="status" aria-live="polite"></span>
         </div>`;
         panel.append(settings);
       }
